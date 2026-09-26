@@ -205,15 +205,26 @@ def _keep_one_card(soup: BeautifulSoup, rules: list[Rule], selector: str | None)
     return card
 
 
-def _swap(text: str, combined: re.Pattern, rules: list[Rule], fake: dict) -> str | None:
-    # Keep only the swapped values and the punctuation between them. Any other
-    # word could be a relative's or a neighbor's name.
+def _phrase(phrase: str) -> str:
+    return r"\s+".join(map(re.escape, phrase.split()))
+
+
+def _rewrite(
+    text: str, pattern: re.Pattern, rules: list[Rule], fake: dict
+) -> str | None:
+    # Keep only the kept phrases, the swapped values and the punctuation between
+    # them. Any other word could be a relative's or a neighbor's name.
     pieces, end = [], 0
-    for match in combined.finditer(text):
+    for match in pattern.finditer(text):
         pieces.append(_NOT_PUNCTUATION.sub("", text[end : match.start()]))
-        target = FIELDS[rules[int(match.lastgroup[1:])].field]
-        replacement = fake[target] if target else ""
-        pieces.append(replacement.upper() if match.group().isupper() else replacement)
+        if match.lastgroup == "keep":
+            pieces.append(match.group())
+        else:
+            target = FIELDS[rules[int(match.lastgroup[1:])].field]
+            replacement = fake[target] if target else ""
+            pieces.append(
+                replacement.upper() if match.group().isupper() else replacement
+            )
         end = match.end()
     if not end:
         return None
@@ -274,21 +285,19 @@ def clean(
     for node in soup.find_all(string=lambda text: isinstance(text, hidden)):
         node.extract()
     kept_card = _keep_one_card(soup, rules, card) if kind == "listing" else None
-    combined = re.compile(
-        "|".join(f"(?P<r{index}>{rule.pattern})" for index, rule in enumerate(rules))
-    )
-    phrases = [phrase.casefold() for phrase in keep]
+    kept = [f"(?P<keep>(?i:{'|'.join(map(_phrase, keep))}))"] if keep else []
+    values = [f"(?P<r{index}>{rule.pattern})" for index, rule in enumerate(rules)]
+    in_card = re.compile("|".join(kept + values))
+    elsewhere = re.compile(kept[0]) if kept else None
     for node in soup.find_all(string=True):
         if isinstance(node, Doctype) or not node.strip():
             continue
-        if any(phrase in node.casefold() for phrase in phrases):
-            continue
-        swapped = None
-        if kept_card is not None and any(
+        inside = kept_card is not None and any(
             parent is kept_card for parent in node.parents
-        ):
-            swapped = _swap(str(node), combined, rules, fake)
-        node.replace_with(swapped or FILLER)
+        )
+        pattern = in_card if inside else elsewhere
+        rewritten = _rewrite(str(node), pattern, rules, fake) if pattern else None
+        node.replace_with(rewritten or FILLER)
     for tag in soup.find_all(True):
         tag.attrs = _kept_attributes(tag)
     fixture = f"<!-- {MARKER} -->\n{soup.prettify()}"

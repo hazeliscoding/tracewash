@@ -36,7 +36,7 @@ LISTING = """<!DOCTYPE html>
         <span class="name">Delphine Arkwright</span>
       </a>
       <span class="age">Age 57</span>
-      <span class="location">Brackenridge, WA</span>
+      <span class="location">Resides in Brackenridge, WA</span>
       <span class="phone">(206) 555-0188</span>
       <span class="email">delphine.arkwright@example.net</span>
       <span class="street">77 Larkspur Lane</span>
@@ -125,8 +125,18 @@ def test_the_fixture_starts_with_the_marker(rules):
 def test_a_no_results_page_keeps_only_the_phrases_asked_for(rules):
     fixture = clean(NO_RESULTS, rules, "no-results", keep=["No people found"])
 
-    assert "No people found for Marisol Quillfeather" in fixture
+    assert "No people found" in fixture
+    assert "Quillfeather" not in fixture
     assert "Brackenridge" not in fixture
+
+
+def test_a_kept_phrase_survives_next_to_your_swapped_values(rules):
+    page = BeautifulSoup(
+        clean(LISTING, rules, "listing", keep=["Resides in"]), "html.parser"
+    )
+
+    location = page.select_one(".card .location").get_text(strip=True)
+    assert location == "Resides in Quillmoor, OR"
 
 
 def test_a_card_selector_finds_your_result_when_results_look_different(rules):
@@ -148,9 +158,9 @@ def test_a_card_selector_finds_your_result_when_results_look_different(rules):
 @pytest.mark.parametrize(
     ("page", "keep", "problem"),
     [
-        (LISTING, ["3 results for"], "last_name"),
-        ("<p>Call (999) 000-1234</p>", ["Call"], "555-01xx"),
-        ("<p>Write to help@example.org</p>", ["Write to"], "example.com"),
+        (LISTING, ["results for Delphine"], "first_name"),
+        ("<p>Call (999) 000-1234</p>", ["Call (999) 000-1234"], "555-01xx"),
+        ("<p>Write to help@example.org</p>", ["help@example.org"], "example.com"),
     ],
     ids=["your-value", "unknown-phone", "unknown-email"],
 )
@@ -204,7 +214,7 @@ def test_main_writes_nothing_when_it_refuses(tmp_path, values_file, monkeypatch)
     with pytest.raises(SystemExit) as exit_info:
         make_fixture.main(
             ["peoplesearch", "no-results", str(saved), "--values", str(values_file)]
-            + ["--keep", "Call"]
+            + ["--keep", "Call (999) 000-1234"]
         )
 
     assert exit_info.value.code != 0
