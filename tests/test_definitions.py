@@ -88,3 +88,11 @@ def test_the_error_names_the_file(tmp_path):
 def test_every_shipped_definition_loads():
     for broker in load_brokers(BROKERS_DIR):
         assert broker.id
+
+
+def test_an_opt_out_can_ask_for_a_street_and_an_age(tmp_path):
+    data = changed("optout.needs", ["first_name", "last_name", "street", "age"])
+
+    broker = load_broker(write_definition(tmp_path, data))
+
+    assert [str(field) for field in broker.optout.needs][-2:] == ["street", "age"]

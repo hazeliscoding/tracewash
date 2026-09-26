@@ -26,6 +26,7 @@ class FieldName(StrEnum):
     FIRST_NAME = "first_name"
     MIDDLE_NAME = "middle_name"
     LAST_NAME = "last_name"
+    STREET = "street"
     CITY = "city"
     STATE = "state"
     STATE_NAME = "state_name"
@@ -33,6 +34,7 @@ class FieldName(StrEnum):
     EMAIL = "email"
     PHONE = "phone"
     BIRTH_YEAR = "birth_year"
+    AGE = "age"
     LISTING_URL = "listing_url"
 
 
