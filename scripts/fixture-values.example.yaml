@@ -1,0 +1,16 @@
+# Copy this file to .tracewash/fixture-values.yaml (git ignores that folder)
+# and replace these fake values with your real ones, the way brokers show
+# them. make_fixture.py swaps each one for the fake profile and refuses to
+# write a fixture if any of them survives. Leave out what you don't know.
+first_name: Delphine
+middle_name: R
+last_name: Arkwright
+other_names: [Delphine Halloway]
+city: Brackenridge
+state: WA
+state_name: Washington
+age: 57
+birth_year: 1969
+phones: ["(206) 555-0188"]
+emails: [delphine.arkwright@example.net]
+streets: [77 Larkspur Lane]

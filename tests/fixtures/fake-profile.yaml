@@ -1,0 +1,12 @@
+# The fake person that fixtures and tests use. Every value is invented.
+# Phones use 555-01xx and emails use example.com.
+first_name: Marisol
+last_name: Quillfeather
+city: Quillmoor
+state: OR
+state_name: Oregon
+age: 41
+birth_year: 1985
+email: marisol.quillfeather@example.com
+phone: 555-0147
+street: 1482 Tern Hollow Road

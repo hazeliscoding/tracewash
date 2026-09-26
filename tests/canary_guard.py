@@ -1,23 +1,25 @@
 import sys
+from pathlib import Path
 
 import pytest
+import yaml
 from typer.testing import CliRunner
 
 from tracewash.cli import app
 
-# Fake values only. Emails use example.com and phones use 555-01xx.
-CANARY_PROFILE = {
-    "first_name": "Marisol",
-    "last_name": "Quillfeather",
-    "email": "marisol.quillfeather@example.com",
-    "phone": "555-0147",
-    "street": "1482 Tern Hollow Road",
-}
+FAKE_PROFILE = yaml.safe_load(
+    (Path(__file__).parent / "fixtures" / "fake-profile.yaml").read_text(
+        encoding="utf-8"
+    )
+)
+# The state, age and birth year are too common to search test output for.
+CANARY_FIELDS = ("first_name", "last_name", "city", "email", "phone", "street")
+CANARY_PROFILE = {field: FAKE_PROFILE[field] for field in CANARY_FIELDS}
 
 
 @pytest.fixture
 def canary_profile():
-    return dict(CANARY_PROFILE)
+    return dict(FAKE_PROFILE)
 
 
 @pytest.fixture

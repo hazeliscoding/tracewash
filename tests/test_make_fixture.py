@@ -1,0 +1,211 @@
+import make_fixture
+import pytest
+import yaml
+from bs4 import BeautifulSoup
+from make_fixture import CleaningError, clean, find_leftovers, load_values
+
+# A second fake person, planted as the "real" owner. Nothing about them may
+# survive cleaning.
+REAL = {
+    "first_name": "Delphine",
+    "last_name": "Arkwright",
+    "city": "Brackenridge",
+    "state": "WA",
+    "state_name": "Washington",
+    "age": 57,
+    "phones": ["(206) 555-0188"],
+    "emails": ["delphine.arkwright@example.net"],
+    "streets": ["77 Larkspur Lane"],
+}
+
+LISTING = """<!DOCTYPE html>
+<html>
+<head>
+  <title>Delphine Arkwright in Brackenridge, WA | People Search</title>
+  <meta property="og:title" content="Delphine Arkwright">
+  <script type="application/ld+json">{"name": "Delphine Arkwright", "telephone": "206-555-0188"}</script>
+  <style>.card { color: teal }</style>
+</head>
+<body>
+  <form><input name="q" value="Delphine Arkwright"></form>
+  <h1>3 results for Delphine Arkwright</h1>
+  <!-- record 206.555.0188 -->
+  <div class="results">
+    <div class="card" data-name="Delphine Arkwright" id="p-9981234">
+      <a class="profile" href="/Delphine-Arkwright/WA/Brackenridge/p9981234">
+        <span class="name">Delphine Arkwright</span>
+      </a>
+      <span class="age">Age 57</span>
+      <span class="location">Brackenridge, WA</span>
+      <span class="phone">(206) 555-0188</span>
+      <span class="email">delphine.arkwright@example.net</span>
+      <span class="street">77 Larkspur Lane</span>
+      <span class="relatives">Tobias Arkwright, Wren Halloway</span>
+    </div>
+    <div class="card" id="p-1112223">
+      <a class="profile" href="/Delphine-Arkwright/OR/Coldwater/p1112223">
+        <span class="name">Delphine Arkwright</span>
+      </a>
+      <span class="age">Age 33</span>
+      <span class="location">Coldwater, OR</span>
+    </div>
+    <div class="card">
+      <span class="name">DELPHINE R ARKWRIGHT</span>
+      <span class="location">Fennmoor, ID</span>
+    </div>
+  </div>
+  <aside><h2>People also searched</h2><a href="/Osric-Pellham">Osric Pellham</a></aside>
+</body>
+</html>
+"""
+
+NO_RESULTS = """<html><body>
+  <div class="no-results">No people found for Marisol Quillfeather</div>
+  <p class="nearby">People near Brackenridge, WA</p>
+</body></html>
+"""
+
+PLANTED = [
+    "Delphine",
+    "Arkwright",
+    "Brackenridge",
+    "Washington",
+    "555-0188",
+    "example.net",
+    "Larkspur",
+    "Tobias",
+    "Halloway",
+    "Osric",
+    "Pellham",
+    "Coldwater",
+    "Fennmoor",
+    "9981234",
+    "1112223",
+    "record",
+    "teal",
+]
+
+
+@pytest.fixture
+def values_file(tmp_path):
+    path = tmp_path / "fixture-values.yaml"
+    path.write_text(yaml.safe_dump(REAL), encoding="utf-8")
+    return path
+
+
+@pytest.fixture
+def rules(values_file):
+    return load_values(values_file)
+
+
+def test_nothing_real_survives_a_listing_page(rules):
+    fixture = clean(LISTING, rules, "listing")
+
+    for planted in PLANTED:
+        assert planted.casefold() not in fixture.casefold(), planted
+
+
+def test_only_your_result_is_kept_with_the_fake_values(rules):
+    page = BeautifulSoup(clean(LISTING, rules, "listing"), "html.parser")
+
+    [card] = page.select(".card")
+    assert card.select_one(".name").get_text(strip=True) == "Marisol Quillfeather"
+    assert card.select_one(".age").get_text(strip=True) == "41"
+    assert card.select_one(".location").get_text(strip=True) == "Quillmoor, OR"
+    assert card.select_one(".phone").get_text(strip=True) == "555-0147"
+    assert card.select_one("a.profile")["href"] == "#"
+
+
+def test_the_fixture_starts_with_the_marker(rules):
+    assert clean(LISTING, rules, "listing").startswith(
+        f"<!-- {make_fixture.MARKER} -->"
+    )
+
+
+def test_a_no_results_page_keeps_only_the_phrases_asked_for(rules):
+    fixture = clean(NO_RESULTS, rules, "no-results", keep=["No people found"])
+
+    assert "No people found for Marisol Quillfeather" in fixture
+    assert "Brackenridge" not in fixture
+
+
+def test_a_card_selector_finds_your_result_when_results_look_different(rules):
+    page = LISTING.replace(
+        '<div class="card" id="p-1112223">',
+        '<div class="card featured" id="p-1112223">',
+    ).replace('<div class="card">', '<div class="card sponsored">')
+    with pytest.raises(CleaningError, match="--card"):
+        clean(page, rules, "listing")
+
+    cleaned = BeautifulSoup(
+        clean(page, rules, "listing", card="div.card"), "html.parser"
+    )
+
+    [card] = cleaned.select("div.card")
+    assert card.select_one(".name").get_text(strip=True) == "Marisol Quillfeather"
+
+
+@pytest.mark.parametrize(
+    ("page", "keep", "problem"),
+    [
+        (LISTING, ["3 results for"], "last_name"),
+        ("<p>Call (999) 000-1234</p>", ["Call"], "555-01xx"),
+        ("<p>Write to help@example.org</p>", ["Write to"], "example.com"),
+    ],
+    ids=["your-value", "unknown-phone", "unknown-email"],
+)
+def test_it_refuses_when_something_real_survives(rules, page, keep, problem):
+    with pytest.raises(CleaningError, match=problem):
+        clean(page, rules, "no-results", keep=keep)
+
+
+def test_it_refuses_a_listing_without_your_name(rules):
+    with pytest.raises(CleaningError, match="--card"):
+        clean("<div class='card'>Someone Else</div>", rules, "listing")
+
+
+def test_find_leftovers_accepts_fake_contact_details():
+    page = "<p>555-0147 marisol.quillfeather@example.com</p>"
+
+    assert find_leftovers(page) == []
+
+
+def test_a_missing_values_file_says_how_to_create_it(tmp_path):
+    with pytest.raises(CleaningError, match="fixture-values.example.yaml"):
+        load_values(tmp_path / "fixture-values.yaml")
+
+
+def test_a_values_file_with_an_unknown_key_is_rejected(tmp_path):
+    path = tmp_path / "fixture-values.yaml"
+    path.write_text(yaml.safe_dump({**REAL, "phone": "555-0199"}), encoding="utf-8")
+
+    with pytest.raises(CleaningError, match="phone"):
+        load_values(path)
+
+
+def test_main_writes_the_fixture(tmp_path, values_file, monkeypatch):
+    monkeypatch.setattr(make_fixture, "FIXTURES_DIR", tmp_path / "fixtures")
+    saved = tmp_path / "saved.html"
+    saved.write_text(LISTING, encoding="utf-8")
+
+    make_fixture.main(
+        ["peoplesearch", "listing", str(saved), "--values", str(values_file)]
+    )
+
+    written = tmp_path / "fixtures" / "peoplesearch" / "listing.html"
+    assert "Marisol Quillfeather" in written.read_text(encoding="utf-8")
+
+
+def test_main_writes_nothing_when_it_refuses(tmp_path, values_file, monkeypatch):
+    monkeypatch.setattr(make_fixture, "FIXTURES_DIR", tmp_path / "fixtures")
+    saved = tmp_path / "saved.html"
+    saved.write_text("<p>Call (999) 000-1234</p>", encoding="utf-8")
+
+    with pytest.raises(SystemExit) as exit_info:
+        make_fixture.main(
+            ["peoplesearch", "no-results", str(saved), "--values", str(values_file)]
+            + ["--keep", "Call"]
+        )
+
+    assert exit_info.value.code != 0
+    assert not (tmp_path / "fixtures").exists()
