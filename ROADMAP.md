@@ -2,7 +2,7 @@
 
 tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, that opts its owner out of US people-search sites and proves each removal with rescans and evidence. This file tracks what gets built, in what order, and the decisions already made.
 
-## Decisions (2026-09-25)
+## Decisions (2026.09.25)
 
 - **Name:** tracewash. The working name `nulltrace` was dropped because [4x3/nulltrace](https://github.com/4x3/nulltrace), a Go tool with the same pitch, already uses it.
 - **Proof over requests.** The loop is find, request, recheck. A sent request is `requested`, never done. A broker becomes `removed` only when a rescan finds no listing. If a later rescan finds it, the broker becomes `listed again`.
@@ -25,14 +25,21 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 - **License:** Apache-2.0.
 - **Brand** is option C, "Struck": a listing card with a strike that runs through it and past its edges. The wordmark is Bricolage Grotesque Bold (optical size 48), lowercase, with -0.02em letter spacing, converted to vector paths. Ink is `#15181c` with a teal accent `#1f7a72`. The dark variants use `#ece9e1` and `#5cc2b5`. The assets are in `docs/brand/`.
 
+## Decisions (2026.09.26)
+
+- **Claim the PyPI name in M0.** `nulltrace` was lost once, so M0 publishes 0.0.1 with the sample `status`. The release workflow runs on a `v*` tag and uses trusted publishing, and M5 reuses it.
+- **Canary guard mechanics.** A pytest plugin checks every test's captured stdout, stderr and logs for the fake profile's values. Logs are captured at DEBUG so no level slips past. The positive control runs a canary-logging test inside `pytester` and expects it to fail, so CI stays green while proving the guard works.
+
 ## M0: Placeholder (as soon as possible)
 
 - [ ] Scaffold the package with uv: `src/tracewash/`, a `tracewash` console script, ruff and pytest.
-- [ ] `tracewash status` prints a canned sample: brokers by state, next rechecks and required actions. It uses no real data.
-- [ ] CI on Linux and Windows runs ruff and pytest.
 - [ ] Turn on the canary guard from the first commit: a pytest fixture with a fake profile fails any test in which a profile value reaches captured logs, stdout or stderr.
+- [ ] `tracewash status` prints a canned sample: brokers by state, next rechecks and required actions. It uses no real data, and its first line says it is a sample.
+- [ ] CI on Ubuntu and Windows, with Python 3.12 and 3.14, runs `ruff check`, `ruff format --check` and pytest.
+- [ ] Release workflow: a `v*` tag builds with uv and publishes to PyPI with trusted publishing. Publish 0.0.1.
+- [ ] Fill in the Commands section of `AGENTS.md` and update the README status line.
 
-**Done when:** CI passes on a fresh clone, `uv run tracewash status` prints the sample, and a test that deliberately logs a canary value fails the canary guard.
+**Done when:** CI passes on a fresh clone, `uv run tracewash status` prints the sample, a test that deliberately logs a canary value fails the canary guard, and `uvx tracewash status` installs 0.0.1 from PyPI.
 
 ## M1: Broker registry
 
@@ -86,7 +93,7 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 - [ ] `CONTRIBUTING.md`: how to add a broker (one YAML file plus fixtures), with a template.
 - [ ] `SECURITY.md`, plus a privacy contract document that lists each promise and how it is enforced.
 - [ ] Issue templates for "Add a broker" and "Broker flow changed". Both warn against posting personal data.
-- [ ] A release workflow that publishes to PyPI with trusted publishing, then version 0.1.0.
+- [ ] Publish version 0.1.0 with the release workflow from M0.
 - [ ] Dogfooding log in `docs/dogfooding.md`. Entries name brokers and states, never personal data.
 - [ ] CI is green, error messages are understandable, and there are no known critical bugs.
 
