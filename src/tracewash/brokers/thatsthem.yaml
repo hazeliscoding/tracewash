@@ -1,0 +1,15 @@
+id: thatsthem
+name: ThatsThem
+operator: Spokeo, Inc.
+# ThatsThem loads its scripts from Spokeo, which runs it.
+domains: [thatsthem.com, spokeo.com]
+search:
+  url: https://thatsthem.com/name/{first_name:slug}-{last_name:slug}/{city:slug}-{state}
+  result: div.record
+  name: h2
+  no_results: 'h2:-soup-contains("No Results")'
+optout:
+  method: form
+  url: https://thatsthem.com/optout
+  needs: [first_name, last_name, street, city, state, zip, email, phone]
+  confirm: none
