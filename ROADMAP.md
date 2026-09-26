@@ -36,7 +36,8 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
   - It refuses to write the fixture if a real value, a phone outside 555-01xx or an email outside example.com survives.
 
   No-results pages come from searching the fake name. If the owner isn't listed on a broker, its listing page comes from a common-name search and is cleaned the same way.
-- **DROP flags match at load time.** A trimmed copy of the California registry (names and domains) is committed with its import script. Definitions match it by domain when they load, so a new broker gets its flag without a re-import. The 2026 registry has 11 of the 12 seed brokers. Radaris isn't registered.
+- **DROP flags match at load time.** A trimmed copy of the California registry (names and domains) is committed with its import script. Definitions match it by domain when they load, so a new broker gets its flag without a re-import. The 2026 registry has all 11 seed brokers.
+- **Radaris is off the seed list.** A New Jersey court transferred radaris.com to Atlas Data Privacy Corp on 2026.08.27 (MID-L-000847-24, under Daniel's Law), so there are no live pages to capture. Radaris has moved to vacate, so it may return.
 
 ## M0: Placeholder (as soon as possible)
 
@@ -58,7 +59,7 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
   - recheck interval and rate limits.
 - [ ] `tracewash brokers list` and `tracewash brokers check`, which validates every definition.
 - [ ] `scripts/make_fixture.py` turns a saved page into a fixture. As a positive control, its tests plant a second fake profile as the "real" one and prove none of it survives.
-- [ ] Seed 10 to 15 brokers by hand. Each one comes with a saved listing page and a saved no-results page, with every personal detail replaced by fake data. Tests run each definition's selectors against its fixtures. Start with Spokeo, Whitepages, BeenVerified, TruePeopleSearch, FastPeopleSearch, Radaris, PeopleFinders, Intelius, MyLife, Nuwber, ThatsThem and USPhoneBook.
+- [ ] Seed 10 to 15 brokers by hand. Each one comes with a saved listing page and a saved no-results page, with every personal detail replaced by fake data. Tests run each definition's selectors against its fixtures. Start with Spokeo, Whitepages, BeenVerified, TruePeopleSearch, FastPeopleSearch, PeopleFinders, Intelius, MyLife, Nuwber, ThatsThem and USPhoneBook.
 - [ ] DROP flags: import the California data broker registry into a trimmed snapshot and match definitions to it by domain. The import script and the snapshot are committed.
 - [ ] CI runs `tracewash brokers check`. As a positive control, an invalid definition must fail it.
 
@@ -116,6 +117,7 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 - A nightly workflow that loads each broker's public search and opt-out pages, with no personal data, and opens an issue when a definition no longer matches.
 - A Docker image and a background scheduler for always-on machines.
 - Record DROP submissions and their 45-day processing windows.
+- Re-add Radaris if its site comes back.
 - More brokers, as good first issues.
 - Import from open opt-out lists where their licenses allow.
 
