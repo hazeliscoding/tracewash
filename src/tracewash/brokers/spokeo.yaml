@@ -1,0 +1,17 @@
+id: spokeo
+name: Spokeo
+operator: Spokeo, Inc.
+domains: [spokeo.com]
+search:
+  url: https://www.spokeo.com/{first_name:slug}-{last_name:slug}/{state_name:slug}/{city:slug}
+  result: 'div[role="listitem"]'
+  name: h3
+  age: h3
+  location: 'div:-soup-contains("Resides in"):not(:has(div:-soup-contains("Resides in")))'
+  link: a
+  no_results: 'div:-soup-contains("did not match")'
+optout:
+  method: form
+  url: https://www.spokeo.com/optout
+  needs: [listing_url, email]
+  confirm: email
