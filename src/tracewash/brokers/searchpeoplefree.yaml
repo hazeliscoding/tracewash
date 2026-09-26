@@ -1,0 +1,16 @@
+id: searchpeoplefree
+name: SearchPeopleFree
+operator: Mississippi Tornado Alley, LLC
+domains: [searchpeoplefree.com]
+search:
+  url: https://searchpeoplefree.com/find/{first_name:slug}-{last_name:slug}/{state}/{city:slug}
+  result: li.toc.l-i.mb-5
+  name: h2.h2 > a
+  age: article > h3 > span
+  link: a.btn-continue
+  no_results: 'h2:-soup-contains("Not Found")'
+optout:
+  method: form
+  url: https://www.searchpeoplefree.com/opt-out
+  needs: [first_name, last_name, city, state, email]
+  confirm: email
