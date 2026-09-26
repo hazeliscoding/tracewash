@@ -7,6 +7,7 @@ check or a search form, click "Save for tracewash" once the results show.
 """
 
 import argparse
+import sys
 import time
 from pathlib import Path
 from string import Formatter
@@ -149,7 +150,9 @@ def main(argv: list[str] | None = None) -> None:
         browser = playwright.chromium.launch(channel="msedge", headless=False)
         context = browser.new_context(service_workers="block")
         context.route("**/*", route)
-        context.expose_function("tracewashChoice", choices.append)
+        context.expose_function(
+            "tracewashChoice", lambda choice: choices.append(choice)
+        )
         page = context.new_page()
         for broker in load_brokers():
             if args.brokers and broker.id not in args.brokers:
@@ -179,8 +182,10 @@ def main(argv: list[str] | None = None) -> None:
                 try:
                     outcome = _capture(page, broker, url, path, hint, choices)
                 except PlaywrightError as error:
-                    print(f"  stopped: the browser went away ({type(error).__name__})")
-                    return
+                    if page.is_closed() or not browser.is_connected():
+                        print("  stopped: the browser window closed")
+                        return
+                    outcome = f"failed ({type(error).__name__})"
                 print(f"  {outcome}", flush=True)
         browser.close()
     for broker_id, hosts in sorted(blocked.items()):
@@ -191,4 +196,9 @@ def main(argv: list[str] | None = None) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as error:  # noqa: BLE001
+        # Tracebacks from Playwright quote page URLs, which hold the searched
+        # name, so only the error's type is shown.
+        sys.exit(f"capture_pages stopped ({type(error).__name__})")
