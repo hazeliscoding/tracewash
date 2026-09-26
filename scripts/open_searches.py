@@ -9,6 +9,7 @@ import argparse
 import sys
 import webbrowser
 from pathlib import Path
+from string import Formatter
 
 import yaml
 from make_fixture import VALUES_PATH, load_fake_profile
@@ -35,11 +36,25 @@ def main(argv: list[str] | None = None) -> None:
     if not args.values.exists():
         sys.exit(f"open_searches: {args.values} doesn't exist yet")
     real = yaml.safe_load(args.values.read_text(encoding="utf-8"))
-    searches = (("listing", real), ("no-results", load_fake_profile()))
+    searches = (
+        ("listing", real, "yourself"),
+        ("no-results", load_fake_profile(), "the fake name"),
+    )
     for broker in load_brokers():
         if args.brokers and broker.id not in args.brokers:
             continue
-        for kind, profile in searches:
+        # Some brokers only search through a form, so their URL has no fields.
+        form_only = not any(
+            field for _, field, _, _ in Formatter().parse(broker.search.url)
+        )
+        for kind, profile, who in searches:
+            if form_only:
+                webbrowser.open_new_tab(broker.search.url)
+                print(
+                    f"{broker.id}: search for {who} there, "
+                    f"then save as {broker.id}-{kind}.html"
+                )
+                continue
             values = {
                 field: str(profile[field])
                 for field in SEARCH_FIELDS
