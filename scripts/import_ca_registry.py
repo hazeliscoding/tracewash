@@ -51,7 +51,9 @@ def main() -> None:
     }
     REGISTRY_PATH.parent.mkdir(exist_ok=True)
     REGISTRY_PATH.write_text(
-        json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     print(f"wrote {len(entries)} registry entries to {REGISTRY_PATH}")
 
