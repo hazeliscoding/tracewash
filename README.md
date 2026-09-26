@@ -1,7 +1,7 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/lockup-dark.svg">
-    <img alt="tracewash" src="docs/brand/lockup.svg" height="44">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hazeliscoding/tracewash/main/docs/brand/lockup-dark.svg">
+    <img alt="tracewash" src="https://raw.githubusercontent.com/hazeliscoding/tracewash/main/docs/brand/lockup.svg" height="44">
   </picture>
 </h1>
 
@@ -9,7 +9,7 @@
 
 Sites like Spokeo and Whitepages publish your name, address, phone number and relatives. You can opt out, but a request is not a removal: forms fail silently, confirmation emails prove nothing, and listings come back months later. Sending the request is the easy part. What matters is whether the listing is gone and stays gone.
 
-> **Status:** planning. There is no code yet. See [ROADMAP.md](ROADMAP.md).
+> **Status:** early development. `tracewash status` prints sample output, and nothing is tracked yet. See [ROADMAP.md](https://github.com/hazeliscoding/tracewash/blob/main/ROADMAP.md).
 
 ## What it will look like
 
@@ -54,4 +54,4 @@ Each broker is one YAML file plus saved-page fixtures with fake data. Adding a b
 
 ## License
 
-[Apache-2.0](LICENSE)
+[Apache-2.0](https://github.com/hazeliscoding/tracewash/blob/main/LICENSE)
