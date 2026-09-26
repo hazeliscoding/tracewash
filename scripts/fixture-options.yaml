@@ -13,3 +13,6 @@ whitepages:
   keep: [not found]
   # Each result sits in its own numbered list, so it never repeats among siblings.
   card: li.serp-card
+searchpeoplefree:
+  keep: [Not Found]
+  card: li.toc.l-i.mb-5
