@@ -14,6 +14,7 @@ The tool holds exactly the data it is meant to protect. Never break these rules,
 
 - **No real personal data anywhere.** That covers fixtures, tests, issues, commits, docs and logs. Before a saved broker page becomes a fixture, replace every name, address, phone number, age and relative with a fake profile. Use `example.com` emails and 555-01xx phone numbers.
 - **Profile values stay in the vault.** They never go to SQLite, logs, exception messages or files outside the vault. The tracker and the logs use broker IDs, states, times and evidence IDs. Search URLs contain names, so they are evidence and belong in the vault. The canary guard must keep passing.
+- **Never read the owner's fixture values or saved pages.** `.tracewash/fixture-values.yaml` and the raw pages the owner saves hold real data. The scripts read them and print only broker IDs, field names and statuses. Diagnose problems through the cleaned fixtures.
 - **CLI tests use the `cli` fixture**, not `CliRunner` directly. `CliRunner` keeps output to itself, so the canary guard would never see it.
 - **Network traffic goes only to broker sites.** No telemetry, analytics, crash reporting or update checks. The dashboard loads no remote assets: fonts, scripts and styles ship in the package.
 - **The dashboard binds to 127.0.0.1 only.**
@@ -27,8 +28,12 @@ The owner brings the dashboard design. Don't write dashboard UI (templates, styl
 
 ## Broker definitions
 
-- One YAML file per broker, validated by the schema. A Python adapter is allowed only for a flow that YAML can't describe, and it sits next to its definition. M1 sets the folder layout. Record it here when it lands.
-- Each definition has fixtures: a saved listing page and a saved no-results page, both with fake data.
+- One YAML file per broker, validated by the schema, at `src/tracewash/brokers/<id>.yaml`. A Python adapter is allowed only for a flow that YAML can't describe, and it sits next to its definition as `<id>.py`.
+- Every URL in a definition must sit on one of its `domains`. Those domains are the only hosts tracewash may contact for that broker.
+- Each definition has fixtures in `tests/fixtures/brokers/<id>/`: `listing.html` and `no-results.html`. Only `scripts/make_fixture.py` writes them, and `tests/test_broker_fixtures.py` rejects any page without its marker. Per-broker cleaning options live in `scripts/fixture-options.yaml`.
+- Selectors must match what the cleaner keeps: tags, classes, ids without long digit runs, `role`, `itemprop`, `itemtype` and `data-test*` attributes, plus phrases listed under `keep`.
+- The fake person is `tests/fixtures/fake-profile.yaml`. The canary guard and the cleaner both read it.
+- DROP flags come from `src/tracewash/data/ca_registry.json`, refreshed with `scripts/import_ca_registry.py`.
 - Only the transition table changes a broker's state. No LLM decides a state.
 - Times are stored in UTC.
 
@@ -43,6 +48,8 @@ The owner brings the dashboard design. Don't write dashboard UI (templates, styl
 - `uv run tracewash status` runs the CLI from the checkout.
 - `uv run pytest` runs the tests. The canary guard in `tests/canary_guard.py` checks every test.
 - `uv run ruff check` and `uv run ruff format --check` run lint and the format check, as CI does.
+- `uv run tracewash brokers list` shows the brokers, and `uv run tracewash brokers check` validates every definition.
+- Fixtures: the owner runs `uv run scripts/open_searches.py <id>` and saves each tab with Ctrl+S into `~/tracewash-pages`, or tries `uv run scripts/capture_pages.py <id>`. Then `uv run scripts/make_fixture.py --folder ~/tracewash-pages` cleans them all.
 - Release: set the version with `uv version <x.y.z>`, commit, and push a `v<x.y.z>` tag. The release workflow checks that the tag matches the version, builds, and publishes to PyPI.
 
 ## Working style
