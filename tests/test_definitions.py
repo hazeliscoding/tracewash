@@ -90,9 +90,15 @@ def test_every_shipped_definition_loads():
         assert broker.id
 
 
-def test_an_opt_out_can_ask_for_a_street_and_an_age(tmp_path):
-    data = changed("optout.needs", ["first_name", "last_name", "street", "age"])
+def test_an_opt_out_can_ask_for_a_street_an_age_and_a_birth_date(tmp_path):
+    data = changed(
+        "optout.needs", ["first_name", "last_name", "street", "age", "birth_date"]
+    )
 
     broker = load_broker(write_definition(tmp_path, data))
 
-    assert [str(field) for field in broker.optout.needs][-2:] == ["street", "age"]
+    assert [str(field) for field in broker.optout.needs][-3:] == [
+        "street",
+        "age",
+        "birth_date",
+    ]

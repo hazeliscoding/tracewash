@@ -34,6 +34,7 @@ class FieldName(StrEnum):
     EMAIL = "email"
     PHONE = "phone"
     BIRTH_YEAR = "birth_year"
+    BIRTH_DATE = "birth_date"
     AGE = "age"
     LISTING_URL = "listing_url"
 
