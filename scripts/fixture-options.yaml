@@ -1,0 +1,14 @@
+# How each broker's saved pages become fixtures. make_fixture.py reads this.
+#   keep: phrases that survive cleaning, such as labels and no-results messages
+#   card: a CSS selector for each search result, when the script can't find yours
+spokeo:
+  keep: [did not match, Resides in]
+truepeoplesearch:
+  keep: [We could not find any records]
+mylife:
+  keep: [We didn]
+nuwber:
+  keep: [No results found]
+whitepages:
+  # Each result sits in its own numbered list, so it never repeats among siblings.
+  card: li.serp-card
