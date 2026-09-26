@@ -54,16 +54,16 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 
 ## M1: Broker registry
 
-- [ ] A definition schema in Pydantic that covers:
+- [x] A definition schema in Pydantic that covers:
   - identity, operator and domains;
   - search: the URL pattern, a selector for each result with selectors for its name, age, location and link, and a selector that marks the no-results page;
   - opt-out: `form`, `email` or `manual`, plus the fields it needs and any email or phone confirmation;
   - recheck interval and rate limits.
-- [ ] `tracewash brokers list` and `tracewash brokers check`, which validates every definition.
-- [ ] `scripts/make_fixture.py` turns a saved page into a fixture. As a positive control, its tests plant a second fake profile as the "real" one and prove none of it survives.
-- [ ] Seed 10 to 15 brokers by hand. Each one comes with a saved listing page and a saved no-results page, with every personal detail replaced by fake data. Tests run each definition's selectors against its fixtures. Start with Spokeo, Whitepages, TruePeopleSearch, FastPeopleSearch, PeopleFinders, Intelius, MyLife, ThatsThem, USPhoneBook and SearchPeopleFree.
-- [ ] DROP flags: import the California data broker registry into a trimmed snapshot and match definitions to it by domain. The import script and the snapshot are committed.
-- [ ] CI runs `tracewash brokers check`. As a positive control, an invalid definition must fail it.
+- [x] `tracewash brokers list` and `tracewash brokers check`, which validates every definition.
+- [x] `scripts/make_fixture.py` turns a saved page into a fixture. As a positive control, its tests plant a second fake profile as the "real" one and prove none of it survives.
+- [x] Seed 10 to 15 brokers by hand. Each one comes with a saved listing page and a saved no-results page, with every personal detail replaced by fake data. Tests run each definition's selectors against its fixtures. Start with Spokeo, Whitepages, TruePeopleSearch, FastPeopleSearch, PeopleFinders, Intelius, MyLife, ThatsThem, USPhoneBook and SearchPeopleFree.
+- [x] DROP flags: import the California data broker registry into a trimmed snapshot and match definitions to it by domain. The import script and the snapshot are committed.
+- [x] CI runs `tracewash brokers check`. As a positive control, an invalid definition must fail it.
 
 **Done when:** `tracewash brokers list` shows every seeded broker with its opt-out method and DROP flag, every definition's selectors pass on its fixtures, and CI rejects a broken definition.
 
