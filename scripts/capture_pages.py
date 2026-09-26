@@ -7,6 +7,7 @@ check or a search form, click "Save for tracewash" once the results show.
 """
 
 import argparse
+import re
 import sys
 import time
 from pathlib import Path
@@ -66,6 +67,15 @@ def allowed(url: str, domains) -> bool:
     return _on(host, RECAPTCHA_HOSTS) and parts.path.startswith("/recaptcha")
 
 
+def redact(message: str) -> str:
+    # Playwright's messages quote URLs, which hold the searched name, so keep
+    # the first line and only each URL's host.
+    first = message.splitlines()[0].removeprefix("Page.goto: ")
+    return re.sub(
+        r"\w+://[^\s\"']+", lambda match: urlsplit(match.group()).netloc, first
+    )
+
+
 def ready(html: str, broker: Broker) -> bool:
     page = read_search_page(html, broker.search)
     return bool(page.results) or page.no_results
@@ -95,8 +105,7 @@ def _capture(
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=60_000)
     except PlaywrightError as error:
-        # Playwright's messages quote the URL, which holds the searched name.
-        return f"couldn't load the page ({type(error).__name__})"
+        return f"couldn't load the page: {redact(error.message)}"
     deadline, asked = time.monotonic() + SETTLE_SECONDS, False
     while True:
         if choices:
@@ -185,7 +194,7 @@ def main(argv: list[str] | None = None) -> None:
                     if page.is_closed() or not browser.is_connected():
                         print("  stopped: the browser window closed")
                         return
-                    outcome = f"failed ({type(error).__name__})"
+                    outcome = f"failed: {redact(error.message)}"
                 print(f"  {outcome}", flush=True)
         browser.close()
     for broker_id, hosts in sorted(blocked.items()):

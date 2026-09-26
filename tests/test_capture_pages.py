@@ -1,5 +1,5 @@
 import pytest
-from capture_pages import allowed, ready
+from capture_pages import allowed, ready, redact
 from definition_samples import VALID
 
 from tracewash.definitions import Broker
@@ -40,3 +40,13 @@ def test_a_challenge_page_is_not_ready():
     assert not ready(
         "<title>Just a moment...</title><p>Checking your browser</p>", BROKER
     )
+
+
+def test_errors_keep_the_reason_and_drop_the_url():
+    message = (
+        "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at "
+        "https://www.spokeo.com/Marisol-Quillfeather/Oregon/Quillmoor\n"
+        'Call log:\n  - navigating to "https://www.spokeo.com/Marisol-Quillfeather"'
+    )
+
+    assert redact(message) == "net::ERR_HTTP2_PROTOCOL_ERROR at www.spokeo.com"
