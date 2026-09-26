@@ -80,8 +80,9 @@ KEPT_ATTRIBUTES = {
 }
 FILLER = "text"
 
-# Long digit runs are record IDs, which point back to the real listing.
-_RECORD_ID = re.compile(r"\d{4,}")
+# Long digit runs are record IDs, which point back to the real listing, and
+# UUIDs can identify the visit.
+_RECORD_ID = re.compile(r"\d{4,}|[0-9a-f]{8}-[0-9a-f]{4}-", re.IGNORECASE)
 _PHONE = re.compile(
     r"(?<!\d)(?:\+?1[\s.-]*)?\(?\d{3}\)?[\s.-]*\d{3}[\s.-]*\d{4}(?!\d)"
     r"|(?<!\d)\d{3}[\s.-]\d{4}(?!\d)"

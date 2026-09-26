@@ -279,3 +279,9 @@ def test_a_lone_initial_is_not_a_leftover(tmp_path):
     fixture = clean('<div class="r-0 r-flex">x</div>', load_values(path), "no-results")
 
     assert 'class="r-0 r-flex"' in fixture
+
+
+def test_uuids_in_attributes_are_dropped(rules):
+    page = '<div id="slot-b3eb4cec-5dc2-4a95-a95f-4e926c81d7a0" class="ad">x</div>'
+
+    assert "b3eb4cec" not in clean(page, rules, "no-results")
