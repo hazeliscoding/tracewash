@@ -2,7 +2,10 @@ import make_fixture
 import pytest
 import yaml
 from bs4 import BeautifulSoup
+from definition_samples import VALID, write_definition
 from make_fixture import CleaningError, clean, find_leftovers, load_values
+
+from tracewash import definitions
 
 # A second fake person, planted as the "real" owner. Nothing about them may
 # survive cleaning.
@@ -285,3 +288,29 @@ def test_uuids_in_attributes_are_dropped(rules):
     page = '<div id="slot-b3eb4cec-5dc2-4a95-a95f-4e926c81d7a0" class="ad">x</div>'
 
     assert "b3eb4cec" not in clean(page, rules, "no-results")
+
+
+def test_folder_mode_recognizes_pages_saved_under_the_browsers_name(
+    tmp_path, values_file, monkeypatch, capsys
+):
+    brokers = tmp_path / "brokers"
+    brokers.mkdir()
+    write_definition(brokers, VALID)
+    monkeypatch.setattr(definitions, "BROKERS_DIR", brokers)
+    monkeypatch.setattr(make_fixture, "FIXTURES_DIR", tmp_path / "fixtures")
+    monkeypatch.setattr(make_fixture, "OPTIONS_PATH", tmp_path / "none.yaml")
+    saved = tmp_path / "saved"
+    saved.mkdir()
+    marked = "<!-- saved from url=(0052)https://www.peoplesearch.example/Delphine-Arkwright -->\n"
+    (saved / "Delphine Arkwright in Brackenridge.html").write_text(
+        marked + LISTING, encoding="utf-8"
+    )
+    canonical = '<link rel="canonical" href="https://www.peoplesearch.example/x">'
+    (saved / "People Search.html").write_text(canonical + NO_RESULTS, encoding="utf-8")
+
+    make_fixture.main(["--folder", str(saved), "--values", str(values_file)])
+
+    written = tmp_path / "fixtures" / "peoplesearch"
+    assert (written / "listing.html").exists()
+    assert (written / "no-results.html").exists()
+    assert "Delphine" not in capsys.readouterr().out

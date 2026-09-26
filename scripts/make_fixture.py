@@ -10,6 +10,7 @@ import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import soupsieve
 import yaml
@@ -22,6 +23,8 @@ from bs4 import (
     ProcessingInstruction,
     Tag,
 )
+
+from tracewash.definitions import load_brokers
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES_DIR = ROOT / "tests" / "fixtures" / "brokers"
@@ -342,28 +345,55 @@ def make(
     return out
 
 
+_SAVED_FROM = re.compile(r"<!-- saved from url=\(\d+\)(\S+) -->")
+
+
+def _identify(saved: Path, brokers: list) -> tuple[str, str] | None:
+    html = saved.read_text(encoding="utf-8", errors="replace")
+    marked = _SAVED_FROM.search(html[:2048])
+    urls = [marked.group(1)] if marked else []
+    soup = BeautifulSoup(html, "html.parser")
+    for tag, attribute in (
+        (soup.find("link", rel="canonical"), "href"),
+        (soup.find("meta", property="og:url"), "content"),
+    ):
+        if tag and tag.get(attribute):
+            urls.append(tag[attribute])
+    hosts = [urlsplit(url).hostname or "" for url in urls]
+    for broker in brokers:
+        if any(
+            host == d or host.endswith(f".{d}")
+            for host in hosts
+            for d in broker.domains
+        ):
+            # Only the fake-name search mentions the fake last name.
+            fake = load_fake_profile()["last_name"].casefold()
+            return broker.id, "no-results" if fake in html.casefold() else "listing"
+    return None
+
+
 def _clean_folder(folder: Path, rules: list[Rule]) -> bool:
     failed, skipped = False, 0
-    for saved in sorted(folder.glob("*.html")):
+    brokers = load_brokers()
+    for saved in sorted(folder.glob("*.html"), key=lambda path: path.stat().st_mtime):
         name = _SAVED_NAME.fullmatch(saved.name)
-        if not name:
+        found = (name["broker"], name["kind"]) if name else _identify(saved, brokers)
+        if not found:
             # A browser names a saved page after its title, which can hold a
             # name, so skipped files are counted, never printed.
             skipped += 1
             continue
-        label = f"{name['broker']} {name['kind']}"
+        broker, kind = found
+        label = f"{broker} {kind}"
         try:
-            out = make(name["broker"], name["kind"], saved, rules)
+            out = make(broker, kind, saved, rules)
         except CleaningError as error:
             failed = True
             print(f"{label}: {error}")
         else:
             print(f"{label}: wrote {out}")
     if skipped:
-        print(
-            f"skipped {skipped} file(s) not named <broker>-listing.html "
-            "or <broker>-no-results.html"
-        )
+        print(f"skipped {skipped} file(s) that match no broker")
     return failed
 
 
