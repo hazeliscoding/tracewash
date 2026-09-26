@@ -78,6 +78,7 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 ## M3: Opt-out and proof loop
 
 - [ ] Rescan: Playwright runs a definition's search for the vault's profile, decides between `listed` and `no record`, and saves the evidence.
+- [ ] Playwright blocks every request to a host outside the broker's declared domains, and a test proves it. Intelius and MyLife send the searched name to third-party trackers (found 2026.09.26). A guided opt-out allows the CAPTCHA provider its form needs, and nothing else.
 - [ ] Guided opt-out: open the broker's form in a visible browser, fill in the fields the definition declares, and wait for the owner to finish. The submission is recorded as `requested`.
 - [ ] Email opt-out: write the request (address, subject and body) for the owner to send from their own mailbox, and record it.
 - [ ] A CAPTCHA, login wall or ID upload moves the broker to `action required`, with the reason.
