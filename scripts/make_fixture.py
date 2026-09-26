@@ -28,6 +28,7 @@ FIXTURES_DIR = ROOT / "tests" / "fixtures" / "brokers"
 FAKE_PROFILE_PATH = ROOT / "tests" / "fixtures" / "fake-profile.yaml"
 VALUES_PATH = ROOT / ".tracewash" / "fixture-values.yaml"
 EXAMPLE_VALUES = "scripts/fixture-values.example.yaml"
+OPTIONS_PATH = ROOT / "scripts" / "fixture-options.yaml"
 MARKER = "Cleaned by scripts/make_fixture.py. Every value in this page is fake."
 KINDS = ("listing", "no-results")
 
@@ -88,6 +89,9 @@ _PHONE = re.compile(
 _FAKE_PHONE = re.compile(r"555[\s.-]*01\d\d$")
 _EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 _NOT_PUNCTUATION = re.compile(r"[^\s,.;:()/-]")
+_SAVED_NAME = re.compile(
+    r"(?P<broker>[a-z0-9]+(?:-[a-z0-9]+)*?)-(?P<kind>listing|no-results)\.html"
+)
 
 
 class CleaningError(Exception):
@@ -307,11 +311,66 @@ def clean(
     return fixture
 
 
+def load_options(broker: str) -> dict:
+    if not OPTIONS_PATH.exists():
+        return {}
+    options = yaml.safe_load(OPTIONS_PATH.read_text(encoding="utf-8")) or {}
+    return options.get(broker) or {}
+
+
+def make(
+    broker: str,
+    kind: str,
+    saved: Path,
+    rules: list[Rule],
+    keep: list[str] = (),
+    card: str | None = None,
+) -> Path:
+    options = load_options(broker)
+    page = saved.read_text(encoding="utf-8", errors="replace")
+    keep = [*options.get("keep", []), *keep]
+    fixture = clean(page, rules, kind, keep, card or options.get("card"))
+    out = FIXTURES_DIR / broker / f"{kind}.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(fixture, encoding="utf-8", newline="\n")
+    return out
+
+
+def _clean_folder(folder: Path, rules: list[Rule]) -> bool:
+    failed, skipped = False, 0
+    for saved in sorted(folder.glob("*.html")):
+        name = _SAVED_NAME.fullmatch(saved.name)
+        if not name:
+            # A browser names a saved page after its title, which can hold a
+            # name, so skipped files are counted, never printed.
+            skipped += 1
+            continue
+        label = f"{name['broker']} {name['kind']}"
+        try:
+            out = make(name["broker"], name["kind"], saved, rules)
+        except CleaningError as error:
+            failed = True
+            print(f"{label}: {error}")
+        else:
+            print(f"{label}: wrote {out}")
+    if skipped:
+        print(
+            f"skipped {skipped} file(s) not named <broker>-listing.html "
+            "or <broker>-no-results.html"
+        )
+    return failed
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("broker", help="the broker's id, such as spokeo")
-    parser.add_argument("kind", choices=KINDS)
-    parser.add_argument("page", type=Path, help="the page you saved")
+    parser.add_argument("broker", nargs="?", help="the broker's id, such as spokeo")
+    parser.add_argument("kind", nargs="?", choices=KINDS)
+    parser.add_argument("page", nargs="?", type=Path, help="the page you saved")
+    parser.add_argument(
+        "--folder",
+        type=Path,
+        help="clean every <broker>-listing.html and <broker>-no-results.html in it",
+    )
     parser.add_argument(
         "--values",
         type=Path,
@@ -323,7 +382,7 @@ def main(argv: list[str] | None = None) -> None:
         action="append",
         default=[],
         metavar="PHRASE",
-        help="keep text that contains this phrase, such as a no-results message",
+        help="keep this phrase wherever it appears, such as a no-results message",
     )
     parser.add_argument(
         "--card",
@@ -331,17 +390,23 @@ def main(argv: list[str] | None = None) -> None:
         help="a CSS selector for each search result, when yours isn't found",
     )
     args = parser.parse_args(argv)
-    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", args.broker):
+    if not args.folder and not (args.broker and args.kind and args.page):
+        parser.error("give a broker, a kind and a saved page, or --folder")
+    if args.broker and not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", args.broker):
         parser.error("the broker id is lowercase letters, digits and hyphens")
     try:
         rules = load_values(args.values)
-        page = args.page.read_text(encoding="utf-8", errors="replace")
-        fixture = clean(page, rules, args.kind, args.keep, args.card)
     except CleaningError as error:
         sys.exit(f"make_fixture: {error}")
-    out = FIXTURES_DIR / args.broker / f"{args.kind}.html"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(fixture, encoding="utf-8", newline="\n")
+    if args.folder:
+        if _clean_folder(args.folder, rules):
+            sys.exit(1)
+        print("Review the diff before you commit.")
+        return
+    try:
+        out = make(args.broker, args.kind, args.page, rules, args.keep, args.card)
+    except CleaningError as error:
+        sys.exit(f"make_fixture: {error}")
     print(f"wrote {out}. Review the diff before you commit it.")
 
 

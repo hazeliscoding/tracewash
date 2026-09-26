@@ -219,3 +219,48 @@ def test_main_writes_nothing_when_it_refuses(tmp_path, values_file, monkeypatch)
 
     assert exit_info.value.code != 0
     assert not (tmp_path / "fixtures").exists()
+
+
+def test_folder_mode_cleans_every_page_with_its_options(
+    tmp_path, values_file, monkeypatch
+):
+    monkeypatch.setattr(make_fixture, "FIXTURES_DIR", tmp_path / "fixtures")
+    options = tmp_path / "options.yaml"
+    options.write_text(yaml.safe_dump({"peoplesearch": {"keep": ["No people found"]}}))
+    monkeypatch.setattr(make_fixture, "OPTIONS_PATH", options)
+    saved = tmp_path / "saved"
+    saved.mkdir()
+    (saved / "peoplesearch-listing.html").write_text(LISTING, encoding="utf-8")
+    (saved / "peoplesearch-no-results.html").write_text(NO_RESULTS, encoding="utf-8")
+
+    make_fixture.main(["--folder", str(saved), "--values", str(values_file)])
+
+    written = tmp_path / "fixtures" / "peoplesearch"
+    assert "Marisol Quillfeather" in (written / "listing.html").read_text(
+        encoding="utf-8"
+    )
+    assert "No people found" in (written / "no-results.html").read_text(
+        encoding="utf-8"
+    )
+
+
+def test_folder_mode_reports_each_failure_and_carries_on(
+    tmp_path, values_file, monkeypatch, capsys
+):
+    monkeypatch.setattr(make_fixture, "FIXTURES_DIR", tmp_path / "fixtures")
+    monkeypatch.setattr(make_fixture, "OPTIONS_PATH", tmp_path / "none.yaml")
+    saved = tmp_path / "saved"
+    saved.mkdir()
+    (saved / "otherpeople-listing.html").write_text("<p>nobody</p>", encoding="utf-8")
+    (saved / "peoplesearch-listing.html").write_text(LISTING, encoding="utf-8")
+    (saved / "notes.html").write_text("<p>notes</p>", encoding="utf-8")
+
+    with pytest.raises(SystemExit) as exit_info:
+        make_fixture.main(["--folder", str(saved), "--values", str(values_file)])
+
+    assert exit_info.value.code == 1
+    out = capsys.readouterr().out
+    assert "otherpeople listing: couldn't find" in out
+    assert "peoplesearch listing: wrote" in out
+    assert "skipped 1 file" in out
+    assert (tmp_path / "fixtures" / "peoplesearch" / "listing.html").exists()
