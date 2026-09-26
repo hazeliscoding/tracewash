@@ -37,7 +37,10 @@ def read_search_page(html: str, search: Search) -> SearchPage:
         # Ads and placeholders often reuse the result markup without a name.
         if not name:
             continue
-        link = card.select_one(search.link) if search.link else None
+        link = None
+        if search.link:
+            # Some brokers make the whole result the link.
+            link = card if card.css.match(search.link) else card.select_one(search.link)
         results.append(
             Result(
                 name=name,

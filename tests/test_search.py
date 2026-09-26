@@ -66,3 +66,12 @@ def test_search_url_lowercases_and_escapes():
 def test_search_url_names_a_missing_value():
     with pytest.raises(ValueError, match="state"):
         search_url(SEARCH, {"first_name": "Marisol", "last_name": "Quillfeather"})
+
+
+def test_a_result_that_is_itself_the_link_gives_its_own_address():
+    search = SEARCH.model_copy(update={"result": "a.result", "link": "a.result"})
+    html = '<a class="result" href="/p/2"><span class="name">Marisol Quillfeather</span></a>'
+
+    [result] = read_search_page(html, search).results
+
+    assert result.link == "/p/2"
