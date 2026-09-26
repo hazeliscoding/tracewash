@@ -1,0 +1,16 @@
+id: whitepages
+name: Whitepages
+operator: Whitepages, Inc.
+domains: [whitepages.com]
+search:
+  url: https://www.whitepages.com/name/{first_name:slug}-{last_name:slug}/{city:slug}-{state}
+  result: li.serp-card
+  name: a.name-link-text
+  location: dd.person-location-city
+  link: a.name-link-text
+  no_results: div.invalid-card
+optout:
+  method: form
+  url: https://www.whitepages.com/suppression-requests
+  needs: [listing_url, phone]
+  confirm: phone
