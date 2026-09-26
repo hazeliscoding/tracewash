@@ -1,0 +1,18 @@
+id: mylife
+name: MyLife
+operator: InsightBridge LLC
+# The opt-out form is a Jotform embedded in mylife.com/privacyrequest.
+domains: [mylife.com, mylife.jotform.com, data-widgets.jotform.io]
+search:
+  url: https://www.mylife.com/pub-multisearch.pubview?searchFirstName={first_name}&searchLastName={last_name}&searchLocation={city}%2C+{state}&whyReg=peoplesearch&whySub=Member+Profile+Sub&pageType=ps
+  result: .ais-InfiniteHits-item
+  name: .hit-name
+  age: .hit-name
+  location: .hit-location
+  link: .hit-btn-lg
+  no_results: 'h1.search-result-heading:-soup-contains("We didn")'
+optout:
+  method: form
+  url: https://www.mylife.com/privacyrequest
+  needs: [first_name, last_name, city, state, zip, birth_year, email]
+  confirm: email
