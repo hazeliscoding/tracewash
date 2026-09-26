@@ -210,7 +210,8 @@ def _keep_one_card(soup: BeautifulSoup, rules: list[Rule], selector: str | None)
 
 
 def _phrase(phrase: str) -> str:
-    return r"\s+".join(map(re.escape, phrase.split()))
+    words = r"\s+".join(map(re.escape, phrase.split()))
+    return rf"(?<!\w){words}(?!\w)"
 
 
 def _rewrite(

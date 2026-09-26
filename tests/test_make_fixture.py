@@ -264,3 +264,9 @@ def test_folder_mode_reports_each_failure_and_carries_on(
     assert "peoplesearch listing: wrote" in out
     assert "skipped 1 file" in out
     assert (tmp_path / "fixtures" / "peoplesearch" / "listing.html").exists()
+
+
+def test_a_kept_phrase_only_matches_whole_words(rules):
+    fixture = clean("<p>Page one</p>", rules, "no-results", keep=["Age"])
+
+    assert BeautifulSoup(fixture, "html.parser").p.get_text(strip=True) == "text"
