@@ -1,0 +1,16 @@
+id: truepeoplesearch
+name: TruePeopleSearch
+operator: Free Data Services, LLC
+domains: [truepeoplesearch.com]
+search:
+  url: https://www.truepeoplesearch.com/results?name={first_name}%20{last_name}&citystatezip={city},{state}
+  result: div.card-summary:not(.d-none)
+  name: .content-header
+  age: span.content-value
+  link: a.detail-link
+  no_results: 'span:-soup-contains("We could not find any records")'
+optout:
+  method: form
+  url: https://www.truepeoplesearch.com/removal
+  needs: [first_name, last_name, email, phone, street, city, state, zip]
+  confirm: email
