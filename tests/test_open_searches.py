@@ -9,8 +9,10 @@ from tracewash import definitions
 
 
 def test_it_opens_your_search_and_the_fake_one(tmp_path, monkeypatch, capsys):
-    monkeypatch.setattr(definitions, "BROKERS_DIR", tmp_path)
-    write_definition(tmp_path, VALID)
+    brokers = tmp_path / "brokers"
+    brokers.mkdir()
+    monkeypatch.setattr(definitions, "BROKERS_DIR", brokers)
+    write_definition(brokers, VALID)
     values = tmp_path / "fixture-values.yaml"
     values.write_text(yaml.safe_dump(REAL), encoding="utf-8")
     opened = []
