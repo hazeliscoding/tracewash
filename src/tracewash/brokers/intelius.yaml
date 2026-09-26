@@ -1,0 +1,16 @@
+id: intelius
+name: Intelius
+operator: Intelius, LLC
+domains: [intelius.com, peopleconnect.us]
+search:
+  url: https://www.intelius.com/search/?firstName={first_name}&lastName={last_name}&city={city}&state={state}
+  result: div.person
+  name: h4.link-name
+  age: span.display-age
+  location: div.address
+  no_results: div.no-results
+optout:
+  method: form
+  url: https://suppression.peopleconnect.us/login
+  needs: [email, first_name, middle_name, last_name, birth_date, phone]
+  confirm: email
