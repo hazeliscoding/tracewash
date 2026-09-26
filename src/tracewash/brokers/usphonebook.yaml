@@ -1,0 +1,17 @@
+id: usphonebook
+name: USPhoneBook
+operator: Mississippi Tornado Alley, LLC
+domains: [usphonebook.com]
+search:
+  url: https://www.usphonebook.com/{first_name:slug,lower}-{last_name:slug,lower}/{state:lower}/{city:slug,lower}
+  result: 'div.success-wrapper-block[itemtype="https://schema.org/Person"]'
+  name: 'span[itemprop="name"]'
+  age: .ls_number-text
+  location: div.ls_success-content-extra-info
+  link: a.ls_contacts-btn
+  no_results: .no-results-content-wrapper
+optout:
+  method: form
+  url: https://www.usphonebook.com/removal
+  needs: [first_name, middle_name, last_name, email, phone, street, city, state]
+  confirm: email
