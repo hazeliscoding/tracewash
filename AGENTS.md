@@ -14,6 +14,7 @@ The tool holds exactly the data it is meant to protect. Never break these rules,
 
 - **No real personal data anywhere.** That covers fixtures, tests, issues, commits, docs and logs. Before a saved broker page becomes a fixture, replace every name, address, phone number, age and relative with a fake profile. Use `example.com` emails and 555-01xx phone numbers.
 - **Profile values stay in the vault.** They never go to SQLite, logs, exception messages or files outside the vault. The tracker and the logs use broker IDs, states, times and evidence IDs. Search URLs contain names, so they are evidence and belong in the vault. The canary guard must keep passing.
+- **CLI tests use the `cli` fixture**, not `CliRunner` directly. `CliRunner` keeps output to itself, so the canary guard would never see it.
 - **Network traffic goes only to broker sites.** No telemetry, analytics, crash reporting or update checks. The dashboard loads no remote assets: fonts, scripts and styles ship in the package.
 - **The dashboard binds to 127.0.0.1 only.**
 - **Never bypass a CAPTCHA.** No solving services, and no stealth plugins that hide automation. A CAPTCHA, login wall or ID check moves the broker to `action required`.
@@ -38,7 +39,11 @@ The owner brings the dashboard design. Don't write dashboard UI (templates, styl
 
 ## Commands
 
-Added in M0.
+- `uv sync` installs the package and the dev tools.
+- `uv run tracewash status` runs the CLI from the checkout.
+- `uv run pytest` runs the tests. The canary guard in `tests/canary_guard.py` checks every test.
+- `uv run ruff check` and `uv run ruff format --check` run lint and the format check, as CI does.
+- Release: set the version with `uv version <x.y.z>`, commit, and push a `v<x.y.z>` tag. The release workflow checks that the tag matches the version, builds, and publishes to PyPI.
 
 ## Working style
 

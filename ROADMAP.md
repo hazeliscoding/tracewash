@@ -32,12 +32,12 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 
 ## M0: Placeholder (as soon as possible)
 
-- [ ] Scaffold the package with uv: `src/tracewash/`, a `tracewash` console script, ruff and pytest.
-- [ ] Turn on the canary guard from the first commit: a pytest fixture with a fake profile fails any test in which a profile value reaches captured logs, stdout or stderr.
-- [ ] `tracewash status` prints a canned sample: brokers by state, next rechecks and required actions. It uses no real data, and its first line says it is a sample.
-- [ ] CI on Ubuntu and Windows, with Python 3.12 and 3.14, runs `ruff check`, `ruff format --check` and pytest.
+- [x] Scaffold the package with uv: `src/tracewash/`, a `tracewash` console script, ruff and pytest.
+- [x] Turn on the canary guard from the first commit: a pytest fixture with a fake profile fails any test in which a profile value reaches captured logs, stdout or stderr.
+- [x] `tracewash status` prints a canned sample: brokers by state, next rechecks and required actions. It uses no real data, and its first line says it is a sample.
+- [x] CI on Ubuntu and Windows, with Python 3.12 and 3.14, runs `ruff check`, `ruff format --check` and pytest.
 - [ ] Release workflow: a `v*` tag builds with uv and publishes to PyPI with trusted publishing. Publish 0.0.1.
-- [ ] Fill in the Commands section of `AGENTS.md` and update the README status line.
+- [x] Fill in the Commands section of `AGENTS.md` and update the README status line.
 
 **Done when:** CI passes on a fresh clone, `uv run tracewash status` prints the sample, a test that deliberately logs a canary value fails the canary guard, and `uvx tracewash status` installs 0.0.1 from PyPI.
 
