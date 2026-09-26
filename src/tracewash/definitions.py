@@ -175,5 +175,9 @@ def load_broker(path: Path) -> Broker:
     return broker
 
 
-def load_brokers(directory: Path = BROKERS_DIR) -> list[Broker]:
-    return [load_broker(path) for path in sorted(directory.glob("*.yaml"))]
+def definition_paths(directory: Path | None = None) -> list[Path]:
+    return sorted((directory or BROKERS_DIR).glob("*.yaml"))
+
+
+def load_brokers(directory: Path | None = None) -> list[Broker]:
+    return [load_broker(path) for path in definition_paths(directory)]
