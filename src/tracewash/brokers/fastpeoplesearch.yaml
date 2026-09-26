@@ -1,0 +1,16 @@
+id: fastpeoplesearch
+name: FastPeopleSearch
+operator: Mississippi Tornado Alley, LLC
+domains: [fastpeoplesearch.com]
+search:
+  url: https://www.fastpeoplesearch.com/name/{first_name:slug,lower}-{last_name:slug,lower}_{city:slug,lower}-{state:lower}
+  result: div.card
+  name: .larger
+  location: .grey
+  link: a.link-to-details
+  no_results: '#notfound_container'
+optout:
+  method: form
+  url: https://www.fastpeoplesearch.com/removal
+  needs: [first_name, last_name, email, phone, street, city, state, zip]
+  confirm: email
