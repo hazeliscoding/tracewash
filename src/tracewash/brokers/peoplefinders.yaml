@@ -1,0 +1,17 @@
+id: peoplefinders
+name: PeopleFinders
+operator: PeopleFinders, LLC
+domains: [peoplefinders.com]
+search:
+  url: https://www.peoplefinders.com/people/{first_name:slug,lower}-{last_name:slug,lower}/{state:lower}/{city:slug,lower}?landing=all
+  result: a.record
+  name: div.col-lg-3 > h4.record__title
+  age: div.col-lg-1 > span.text-dark
+  location: div.col-lg-2 li.text-dark
+  link: a.record
+  no_results: section.no-results
+optout:
+  method: form
+  url: https://www.peoplefinders.com/opt-out
+  needs: [first_name, middle_name, last_name, email, phone, street, city, state]
+  confirm: email
