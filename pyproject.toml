@@ -1,0 +1,48 @@
+[project]
+name = "tracewash"
+version = "0.0.1"
+description = "Opt out of people-search sites and prove it: local-first removal with rescans and evidence."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Hazel Granados" }]
+requires-python = ">=3.12"
+keywords = ["privacy", "data-brokers", "people-search", "opt-out", "local-first"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+]
+dependencies = [
+    "typer>=0.27.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/hazeliscoding/tracewash"
+Issues = "https://github.com/hazeliscoding/tracewash/issues"
+
+[project.scripts]
+tracewash = "tracewash.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff.lint]
+extend-select = ["I", "B", "UP"]
+
+[tool.pytest]
+testpaths = ["tests"]
+strict = true
