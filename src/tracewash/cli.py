@@ -4,7 +4,7 @@ from typing import Annotated
 
 import typer
 
-from tracewash import definitions
+from tracewash import definitions, drop
 
 # Locals can hold profile values, so tracebacks must never print them.
 app = typer.Typer(no_args_is_help=True, pretty_exceptions_show_locals=False)
@@ -63,7 +63,7 @@ def _table(rows: list[tuple[str, ...]]) -> str:
 
 @brokers_app.command("list")
 def list_brokers() -> None:
-    """Show every broker with its opt-out method."""
+    """Show every broker with its opt-out method and whether DROP covers it."""
     try:
         brokers = definitions.load_brokers()
     except definitions.DefinitionError as error:
@@ -71,8 +71,17 @@ def list_brokers() -> None:
             f"{error}\nRun tracewash brokers check to see every problem.", err=True
         )
         raise typer.Exit(1) from None
-    rows = [("broker", "name", "opt-out")]
-    rows += [(broker.id, broker.name, broker.optout.method.value) for broker in brokers]
+    registry = drop.load_registry()
+    rows = [("broker", "name", "opt-out", "drop")]
+    rows += [
+        (
+            broker.id,
+            broker.name,
+            broker.optout.method.value,
+            "yes" if drop.covering_entry(broker, registry) else "no",
+        )
+        for broker in brokers
+    ]
     typer.echo(_table(rows))
 
 

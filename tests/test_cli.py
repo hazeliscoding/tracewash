@@ -1,15 +1,28 @@
+import json
 from importlib import metadata
 
 import pytest
-from definition_samples import VALID, changed, write_definition
+from definition_samples import VALID, changed, sample, write_definition
 
-from tracewash import definitions
+from tracewash import definitions, drop
 
 
 @pytest.fixture
 def brokers_dir(tmp_path, monkeypatch):
     monkeypatch.setattr(definitions, "BROKERS_DIR", tmp_path)
     return tmp_path
+
+
+@pytest.fixture
+def registry(tmp_path, monkeypatch):
+    path = tmp_path / "registry.json"
+    registry = {
+        "brokers": [
+            {"name": "People Search, Inc.", "domains": ["peoplesearch.example"]}
+        ]
+    }
+    path.write_text(json.dumps(registry), encoding="utf-8")
+    monkeypatch.setattr(drop, "REGISTRY_PATH", path)
 
 
 def test_version_prints_the_installed_version(cli):
@@ -33,17 +46,19 @@ def test_status_lists_brokers_by_state(cli):
         assert any(line.startswith(f"{label} ") for line in lines), label
 
 
-def test_brokers_list_shows_each_broker_with_its_opt_out_method(cli, brokers_dir):
+def test_brokers_list_shows_the_opt_out_method_and_drop_flag(
+    cli, brokers_dir, registry
+):
     write_definition(brokers_dir, VALID)
-    write_definition(brokers_dir, changed("id", "otherpeople"), stem="otherpeople")
+    write_definition(brokers_dir, sample("otherpeople"))
 
     result = cli("brokers", "list")
 
     assert result.exit_code == 0
     rows = [line.split() for line in result.stdout.splitlines()[1:]]
-    assert [(row[0], row[-1]) for row in rows] == [
-        ("otherpeople", "form"),
-        ("peoplesearch", "form"),
+    assert [(row[0], row[-2], row[-1]) for row in rows] == [
+        ("otherpeople", "form", "no"),
+        ("peoplesearch", "form", "yes"),
     ]
 
 

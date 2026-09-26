@@ -1,0 +1,3826 @@
+{
+  "source": "https://cppa.ca.gov/data_broker_registry/registry.csv",
+  "retrieved": "2026.09.26",
+  "brokers": [
+    {
+      "name": "01Advertising Inc.",
+      "domains": [
+        "01advertising.com"
+      ]
+    },
+    {
+      "name": "33 Mile Radius LLC",
+      "domains": [
+        "33mileradius.com"
+      ]
+    },
+    {
+      "name": "33Across, Inc.",
+      "domains": [
+        "33across.com"
+      ]
+    },
+    {
+      "name": "5x5 US, LLC",
+      "domains": [
+        "5x5data.com"
+      ]
+    },
+    {
+      "name": "6sense Insights, Inc.",
+      "domains": [
+        "6sense.com"
+      ]
+    },
+    {
+      "name": "A Direct Marketing Inc",
+      "domains": [
+        "bookyourdata.com"
+      ]
+    },
+    {
+      "name": "Above Data, Inc.",
+      "domains": [
+        "abovedata.io"
+      ]
+    },
+    {
+      "name": "Accudata Integrated Marketing, LLC",
+      "domains": [
+        "acculeads.com",
+        "deepsync.com"
+      ]
+    },
+    {
+      "name": "Accurate Append Inc.",
+      "domains": [
+        "accurateappend.com"
+      ]
+    },
+    {
+      "name": "ACH, Address Clearing House",
+      "domains": [
+        "achcoop.com"
+      ]
+    },
+    {
+      "name": "Acronymix LLC",
+      "domains": [
+        "acronymix.com"
+      ]
+    },
+    {
+      "name": "ActivImpact, LLC",
+      "domains": [
+        "activimpact.ai"
+      ]
+    },
+    {
+      "name": "Acxiom LLC",
+      "domains": [
+        "acxiom.com"
+      ]
+    },
+    {
+      "name": "Addapptation, Inc.",
+      "domains": [
+        "propensity.com"
+      ]
+    },
+    {
+      "name": "AdeptID, Inc.",
+      "domains": [
+        "adept-id.com"
+      ]
+    },
+    {
+      "name": "Adprime Media LLC",
+      "domains": [
+        "adprime.com"
+      ]
+    },
+    {
+      "name": "adsquare GmbH",
+      "domains": [
+        "adsquare.com"
+      ]
+    },
+    {
+      "name": "Adstra LLC",
+      "domains": [
+        "adstradata.com"
+      ]
+    },
+    {
+      "name": "AdsWizz, Inc.",
+      "domains": [
+        "adswizz.com"
+      ]
+    },
+    {
+      "name": "Adttribution Inc",
+      "domains": [
+        "adttribution.com"
+      ]
+    },
+    {
+      "name": "AdvisorTarget, LLC",
+      "domains": [
+        "finsum.com"
+      ]
+    },
+    {
+      "name": "Affinity Answers Corporation",
+      "domains": [
+        "affinityanswers.com"
+      ]
+    },
+    {
+      "name": "Affinity Solutions Inc.",
+      "domains": [
+        "affinity.solutions"
+      ]
+    },
+    {
+      "name": "AggKnowledge Inc.",
+      "domains": [
+        "aggknowledge.ai"
+      ]
+    },
+    {
+      "name": "Agile Education Marketing, LLC",
+      "domains": [
+        "agile-ed.com"
+      ]
+    },
+    {
+      "name": "AGR Marketing Solutions LLC",
+      "domains": [
+        "agrmarketingsolutions.com"
+      ]
+    },
+    {
+      "name": "Aidentified, Inc.",
+      "domains": [
+        "aidentified.com"
+      ]
+    },
+    {
+      "name": "Airlines Reporting Corporation",
+      "domains": [
+        "arccorp.com"
+      ]
+    },
+    {
+      "name": "AlikeAudience Inc",
+      "domains": [
+        "alikeaudience.com"
+      ]
+    },
+    {
+      "name": "Allant Group, LLC",
+      "domains": [
+        "allantgroup.com"
+      ]
+    },
+    {
+      "name": "Alliant Cooperative Data Solutions LLC",
+      "domains": [
+        "alliantinsight.com"
+      ]
+    },
+    {
+      "name": "Alphonso Inc.",
+      "domains": [
+        "alphonso.tv"
+      ]
+    },
+    {
+      "name": "Altair Data Resources, Inc",
+      "domains": [
+        "altairdata.com"
+      ]
+    },
+    {
+      "name": "Altrata, Inc.",
+      "domains": [
+        "altrata.com"
+      ]
+    },
+    {
+      "name": "AnalyticsIQ Inc",
+      "domains": [
+        "analytics-iq.com"
+      ]
+    },
+    {
+      "name": "Anchor Computer Inc.",
+      "domains": [
+        "anchorcomputer.com"
+      ]
+    },
+    {
+      "name": "Aniline, Inc.",
+      "domains": [
+        "aniline.ai",
+        "salesassistiq.ai"
+      ]
+    },
+    {
+      "name": "Anne Lewis Strategies LLC",
+      "domains": [
+        "missionwired.com"
+      ]
+    },
+    {
+      "name": "Anteriad, LLC",
+      "domains": [
+        "anteriad.com"
+      ]
+    },
+    {
+      "name": "Apollo Interactive, LLC",
+      "domains": [
+        "apollointeractive.com",
+        "mortgageratespro.com",
+        "online-mortgage-loans.com",
+        "final-expense-quotes.com",
+        "greatlifeinsurancegroup.com",
+        "lifeinsurancepro.org",
+        "nationalhomequotes.com",
+        "bestautoinsurance.com",
+        "blueskycoverage.com",
+        "nationalautoquotes.com",
+        "affordablehealthquotesforyou.com",
+        "online-health-insurance.com",
+        "healthplansamerica.org",
+        "medicarecoveragefinder.com",
+        "medicareinfo.org",
+        "medicare-providers.net",
+        "direct-mortgage-quotes.com",
+        "insuranceplanmarket.com",
+        "petinsurancemarket.com",
+        "autopolicymarket.com",
+        "healthplanmarket.com",
+        "yourpolicyguide.com",
+        "medicaremarket.com",
+        "medicareplan.net"
+      ]
+    },
+    {
+      "name": "App Science, Inc",
+      "domains": [
+        "appscience.ai"
+      ]
+    },
+    {
+      "name": "AppLovin Corporation",
+      "domains": [
+        "applovin.com"
+      ]
+    },
+    {
+      "name": "Aristotle International, Inc.",
+      "domains": [
+        "aristotle.com"
+      ]
+    },
+    {
+      "name": "ASL Marketing",
+      "domains": [
+        "deepsync.com"
+      ]
+    },
+    {
+      "name": "Asset International, Inc.",
+      "domains": [
+        "issmarketintelligence.com"
+      ]
+    },
+    {
+      "name": "Astoria Company",
+      "domains": [
+        "astoriacompany.com"
+      ]
+    },
+    {
+      "name": "AtData, LLC",
+      "domains": [
+        "atdata.com"
+      ]
+    },
+    {
+      "name": "Attribits",
+      "domains": [
+        "attribits.com"
+      ]
+    },
+    {
+      "name": "Audience Acuity LLC",
+      "domains": [
+        "audienceacuity.com"
+      ]
+    },
+    {
+      "name": "Audience Mix LLC",
+      "domains": [
+        "audiencemix.net"
+      ]
+    },
+    {
+      "name": "Austin Consolidated Holdings, Inc.",
+      "domains": [
+        "equifax.com"
+      ]
+    },
+    {
+      "name": "Autodata Solutions, Inc.",
+      "domains": [
+        "jdpower.com"
+      ]
+    },
+    {
+      "name": "AutoWeb, Inc.",
+      "domains": [
+        "autoweb.com"
+      ]
+    },
+    {
+      "name": "AWL Holdings, LLC",
+      "domains": [
+        "allwebleads.com",
+        "insurancequotes.com",
+        "usinsuranceonline.com",
+        "affordable-home-insurance.org",
+        "discount-car-insurance-rates.com",
+        "general-liability-insurance-rates.com",
+        "affordable-health-insurance-plans.org",
+        "affordable-life-insurance-rates.org"
+      ]
+    },
+    {
+      "name": "Azerion US Inc.",
+      "domains": [
+        "azerion.com"
+      ]
+    },
+    {
+      "name": "Azira, LLC",
+      "domains": [
+        "azira.com"
+      ]
+    },
+    {
+      "name": "Babel Street, Inc.",
+      "domains": [
+        "babelstreet.com"
+      ]
+    },
+    {
+      "name": "Bachmanity, Inc.",
+      "domains": [
+        "aviato.co"
+      ]
+    },
+    {
+      "name": "Baron App, Inc.",
+      "domains": [
+        "candl.app",
+        "cameo.com"
+      ]
+    },
+    {
+      "name": "BB Direct Inc",
+      "domains": [
+        "bbdirect.com"
+      ]
+    },
+    {
+      "name": "BDEX, LLC",
+      "domains": [
+        "bdex.com"
+      ]
+    },
+    {
+      "name": "BDO GCI, LLC",
+      "domains": [
+        "bdo.com"
+      ]
+    },
+    {
+      "name": "BECAUSAL, INC.",
+      "domains": [
+        "becausal.com"
+      ]
+    },
+    {
+      "name": "BeenVerified, LLC and its subsidiaries and affiliates",
+      "domains": [
+        "beenverified.com",
+        "peoplelooker.com",
+        "numberguru.com",
+        "ownerly.com",
+        "neighborwho.com",
+        "peoplesmart.com",
+        "bumper.com",
+        "freephonetracer.com",
+        "emailfinder.com",
+        "moneybot5000.com",
+        "reversephone.com",
+        "wingmate.com",
+        "famfinder.com"
+      ]
+    },
+    {
+      "name": "Beeswax",
+      "domains": [
+        "beeswax.com"
+      ]
+    },
+    {
+      "name": "Belardi Ostroy, ALC, LLC",
+      "domains": [
+        "belardiwong.com"
+      ]
+    },
+    {
+      "name": "Best Pick Reports, LLC",
+      "domains": [
+        "bestpickreports.com"
+      ]
+    },
+    {
+      "name": "BH Marketing Group LLC",
+      "domains": [
+        "usmarketinggrp.com"
+      ]
+    },
+    {
+      "name": "BIGDBM",
+      "domains": [
+        "bigdbm.com",
+        "optout.bigdbm.com"
+      ]
+    },
+    {
+      "name": "Biointelli Corporation",
+      "domains": [
+        "biointelli.com"
+      ]
+    },
+    {
+      "name": "Biscred",
+      "domains": [
+        "biscred.com"
+      ]
+    },
+    {
+      "name": "Black Pearl Group Limited",
+      "domains": [
+        "blackpearl.com"
+      ]
+    },
+    {
+      "name": "Blackbaud, Inc",
+      "domains": [
+        "blackbaud.com"
+      ]
+    },
+    {
+      "name": "Blis Global Ltd",
+      "domains": [
+        "blis.com"
+      ]
+    },
+    {
+      "name": "Blue Action Inc.",
+      "domains": [
+        "blueaction.io"
+      ]
+    },
+    {
+      "name": "Blue Hill Marketing Solutions, Inc",
+      "domains": [
+        "liftbasedata.com",
+        "liftengine.com",
+        "launchpadltv.com"
+      ]
+    },
+    {
+      "name": "Blueprint Audiences",
+      "domains": [
+        "blueprintaudiences.com"
+      ]
+    },
+    {
+      "name": "Bombora, Inc.",
+      "domains": [
+        "bombora.com"
+      ]
+    },
+    {
+      "name": "Bridg, a division of Cardlytics, Inc.",
+      "domains": [
+        "bridg.com"
+      ]
+    },
+    {
+      "name": "Brooks Integrated Marketing, LLC",
+      "domains": [
+        "brooksim.com"
+      ]
+    },
+    {
+      "name": "Buildertrend Solutions, Inc.",
+      "domains": [
+        "buildertrend.com",
+        "toolbeltdata.com"
+      ]
+    },
+    {
+      "name": "Bushwick Growbots LLC",
+      "domains": [
+        "growbots.com"
+      ]
+    },
+    {
+      "name": "Buxton Company, LLC",
+      "domains": [
+        "buxtonco.com"
+      ]
+    },
+    {
+      "name": "Buyerlink Inc.",
+      "domains": [
+        "buyerlink.co"
+      ]
+    },
+    {
+      "name": "BuyersRoad, Inc",
+      "domains": [
+        "experience.com"
+      ]
+    },
+    {
+      "name": "BV Insights LLC",
+      "domains": [
+        "big-village.com"
+      ]
+    },
+    {
+      "name": "Cadent LLC",
+      "domains": [
+        "cadent.tv"
+      ]
+    },
+    {
+      "name": "Captify Technologies",
+      "domains": [
+        "captifytechnologies.com"
+      ]
+    },
+    {
+      "name": "Captiv8 Inc.",
+      "domains": [
+        "captiv8.io"
+      ]
+    },
+    {
+      "name": "Carry Technologies Inc.",
+      "domains": [
+        "hightouch.com"
+      ]
+    },
+    {
+      "name": "Catalina Marketing Corporation",
+      "domains": [
+        "catalina.com"
+      ]
+    },
+    {
+      "name": "Catalist LLC",
+      "domains": [
+        "catalist.us"
+      ]
+    },
+    {
+      "name": "CB Information Services, Inc.",
+      "domains": [
+        "cbinsights.com"
+      ]
+    },
+    {
+      "name": "CDK Global, LLC",
+      "domains": [
+        "cdkglobal.com"
+      ]
+    },
+    {
+      "name": "Censia, Inc.",
+      "domains": [
+        "censia.com"
+      ]
+    },
+    {
+      "name": "Chartboost, LLC",
+      "domains": [
+        "loopme.com"
+      ]
+    },
+    {
+      "name": "CHECKPEOPLE, LLC",
+      "domains": [
+        "checkpeople.com"
+      ]
+    },
+    {
+      "name": "Choreograph LLC",
+      "domains": [
+        "choreograph.com"
+      ]
+    },
+    {
+      "name": "Circana, LLC",
+      "domains": [
+        "circana.com"
+      ]
+    },
+    {
+      "name": "Cision",
+      "domains": [
+        "cision.com"
+      ]
+    },
+    {
+      "name": "CITYDATA Inc.",
+      "domains": [
+        "citydata.ai"
+      ]
+    },
+    {
+      "name": "Civil Data Research, LLC",
+      "domains": [
+        "searchpublicrecords.com"
+      ]
+    },
+    {
+      "name": "Civis Analytics, Inc.",
+      "domains": [
+        "civisanalytics.com"
+      ]
+    },
+    {
+      "name": "Claritas LLC",
+      "domains": [
+        "claritas.com"
+      ]
+    },
+    {
+      "name": "Clarivate",
+      "domains": [
+        "clarivate.com"
+      ]
+    },
+    {
+      "name": "Clay Labs, Inc.",
+      "domains": [
+        "clay.com"
+      ]
+    },
+    {
+      "name": "ClearCompany, LLC",
+      "domains": [
+        "clearcompany.com"
+      ]
+    },
+    {
+      "name": "Clearview AI, Inc.",
+      "domains": [
+        "clearview.ai"
+      ]
+    },
+    {
+      "name": "Clickagy LLC",
+      "domains": [
+        "clickagy.com"
+      ]
+    },
+    {
+      "name": "Coast Technology, LLC",
+      "domains": [
+        "coasttechnology.com"
+      ]
+    },
+    {
+      "name": "Cognism",
+      "domains": [
+        "cognism.com"
+      ]
+    },
+    {
+      "name": "Collective Data Solutions, LLC",
+      "domains": [
+        "collectivedata.io"
+      ]
+    },
+    {
+      "name": "Command Precision Inc.",
+      "domains": [
+        "persistent.id"
+      ]
+    },
+    {
+      "name": "Commerce Signals, Inc.",
+      "domains": [
+        "commercesignals.com"
+      ]
+    },
+    {
+      "name": "Compact Information Systems, LLC",
+      "domains": [
+        "deepsync.com"
+      ]
+    },
+    {
+      "name": "Complete Mailing Lists LLC",
+      "domains": [
+        "completemailinglists.com"
+      ]
+    },
+    {
+      "name": "Complete Medical Lists, Inc.",
+      "domains": [
+        "completemedicallists.com"
+      ]
+    },
+    {
+      "name": "Comscore, Inc",
+      "domains": [
+        "comscore.com"
+      ]
+    },
+    {
+      "name": "Connatix Native Exchange Inc.",
+      "domains": [
+        "jwx.com"
+      ]
+    },
+    {
+      "name": "Connected Investors, LLC",
+      "domains": [
+        "connectedinvestors.com"
+      ]
+    },
+    {
+      "name": "Connection Holdings",
+      "domains": [
+        "connectionholdings.com"
+      ]
+    },
+    {
+      "name": "Consumer Canvas, LLC",
+      "domains": [
+        "consumercanvas.net"
+      ]
+    },
+    {
+      "name": "Consumerbase, LLC",
+      "domains": [
+        "exactdata.com"
+      ]
+    },
+    {
+      "name": "ContactOut Limited",
+      "domains": [
+        "contactout.com"
+      ]
+    },
+    {
+      "name": "Converge Marketing LLC",
+      "domains": [
+        "convergemarketing.com"
+      ]
+    },
+    {
+      "name": "Convex Labs LLC",
+      "domains": [
+        "convex.com"
+      ]
+    },
+    {
+      "name": "CoStar Realty Information, Inc.",
+      "domains": [
+        "costar.com"
+      ]
+    },
+    {
+      "name": "Cox Automotive, Inc.",
+      "domains": [
+        "coxautoinc.com",
+        "autotrader.com",
+        "fordblueadvantage.com",
+        "kbb.com"
+      ]
+    },
+    {
+      "name": "Crimson Hexagon",
+      "domains": [
+        "brandwatch.com"
+      ]
+    },
+    {
+      "name": "Crisil Irvena US LLC",
+      "domains": [
+        "greenwich.com"
+      ]
+    },
+    {
+      "name": "Criteo Corp.",
+      "domains": [
+        "criteo.com"
+      ]
+    },
+    {
+      "name": "Cross Pixel Media, Inc.",
+      "domains": [
+        "crosspixel.net"
+      ]
+    },
+    {
+      "name": "Crunchbase, Inc.",
+      "domains": [
+        "crunchbase.com"
+      ]
+    },
+    {
+      "name": "CTAM LeadShare Corp.",
+      "domains": [
+        "smartmove.us"
+      ]
+    },
+    {
+      "name": "Cuebiq Group, LLC",
+      "domains": [
+        "cuebiq.com"
+      ]
+    },
+    {
+      "name": "Cybba Inc.",
+      "domains": [
+        "cybba.com"
+      ]
+    },
+    {
+      "name": "Data Axle Inc.",
+      "domains": [
+        "data-axle.com"
+      ]
+    },
+    {
+      "name": "Data Decisions Group",
+      "domains": [
+        "datadecisionsgroup.com"
+      ]
+    },
+    {
+      "name": "Data Partners, Inc.",
+      "domains": [
+        "datapartners.com"
+      ]
+    },
+    {
+      "name": "DataDelivers, LLC",
+      "domains": [
+        "datadelivers.com"
+      ]
+    },
+    {
+      "name": "Datadesk Inc.",
+      "domains": [
+        "datadesk.io"
+      ]
+    },
+    {
+      "name": "Datafy, LLC",
+      "domains": [
+        "datafy.com"
+      ]
+    },
+    {
+      "name": "Dataline, Inc.",
+      "domains": [
+        "datalinedata.com"
+      ]
+    },
+    {
+      "name": "Datalink Services, Inc",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "Dataman Group Inc",
+      "domains": [
+        "datamangroup.com"
+      ]
+    },
+    {
+      "name": "Datamentors LLC",
+      "domains": [
+        "porchgroupmedia.com"
+      ]
+    },
+    {
+      "name": "Datanyze LLC",
+      "domains": [
+        "datanyze.com"
+      ]
+    },
+    {
+      "name": "Datasys Group, Inc.",
+      "domains": [
+        "datasys.com"
+      ]
+    },
+    {
+      "name": "Date Detective Inc",
+      "domains": [
+        "date-detective.app",
+        "date-detective.com"
+      ]
+    },
+    {
+      "name": "Datonics LLC",
+      "domains": [
+        "datonics.com"
+      ]
+    },
+    {
+      "name": "DealerDirect LLC",
+      "domains": [
+        "forddirect.com"
+      ]
+    },
+    {
+      "name": "DealerSocket, LLC (US)",
+      "domains": [
+        "dealersocket.com"
+      ]
+    },
+    {
+      "name": "DealerX Partners LLC",
+      "domains": [
+        "dealerx.com"
+      ]
+    },
+    {
+      "name": "Dealfront Finland Oy",
+      "domains": [
+        "leadfeeder.com"
+      ]
+    },
+    {
+      "name": "Dealfront Group GmbH",
+      "domains": [
+        "leadfeeder.com"
+      ]
+    },
+    {
+      "name": "DealMachine Operations Inc.",
+      "domains": [
+        "dealmachine.com"
+      ]
+    },
+    {
+      "name": "Decide Technologies Inc.",
+      "domains": [
+        "decide.co"
+      ]
+    },
+    {
+      "name": "DecisionLinks LLC",
+      "domains": [
+        "decisionlinks.com"
+      ]
+    },
+    {
+      "name": "Deep Root Analytics, LLC",
+      "domains": [
+        "deeprootanalytics.com"
+      ]
+    },
+    {
+      "name": "Definitive Healthcare LLC",
+      "domains": [
+        "definitivehc.com"
+      ]
+    },
+    {
+      "name": "Deloitte Consulting LLP",
+      "domains": [
+        "deloitte.com",
+        "healthprism.ai",
+        "peopleprism.ai",
+        "giveprism.ai"
+      ]
+    },
+    {
+      "name": "Deloitte Financial Advisory Services LLP",
+      "domains": [
+        "deloitte.com"
+      ]
+    },
+    {
+      "name": "Demand Science US, LLC",
+      "domains": [
+        "demandscience.com"
+      ]
+    },
+    {
+      "name": "Demandbase, Inc.",
+      "domains": [
+        "demandbase.com"
+      ]
+    },
+    {
+      "name": "Dice Career Solutions, Inc.",
+      "domains": [
+        "dice.com"
+      ]
+    },
+    {
+      "name": "Digital Media Solutions, LLC",
+      "domains": [
+        "digitalmediasolutions.com"
+      ]
+    },
+    {
+      "name": "Digital Safety Products, LLC",
+      "domains": [
+        "spyfly.com",
+        "publicrecordreports.com"
+      ]
+    },
+    {
+      "name": "Digital Viking Media Inc",
+      "domains": [
+        "digitalvikingmedia.com"
+      ]
+    },
+    {
+      "name": "Disco Technology Inc",
+      "domains": [
+        "disconetwork.com"
+      ]
+    },
+    {
+      "name": "Disqus",
+      "domains": [
+        "disqus.com"
+      ]
+    },
+    {
+      "name": "DonorBase, Inc.",
+      "domains": [
+        "donorbase.com"
+      ]
+    },
+    {
+      "name": "DonorBureau LLC",
+      "domains": [
+        "donorbureau.com"
+      ]
+    },
+    {
+      "name": "DR Decision Resources, LLC",
+      "domains": [
+        "clarivate.com"
+      ]
+    },
+    {
+      "name": "Draup, Inc.",
+      "domains": [
+        "draup.com"
+      ]
+    },
+    {
+      "name": "Dresden Direct inc.",
+      "domains": [
+        "dresdendirect.com"
+      ]
+    },
+    {
+      "name": "Drivers History Information Sales, LLC",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "DSPolitical, LLC",
+      "domains": [
+        "dspolitical.com"
+      ]
+    },
+    {
+      "name": "Dstillery, Inc.",
+      "domains": [
+        "dstillery.com"
+      ]
+    },
+    {
+      "name": "DT Client Services, LLC",
+      "domains": [
+        "thedatatrust.com"
+      ]
+    },
+    {
+      "name": "DTN, LLC",
+      "domains": [
+        "dtn.com"
+      ]
+    },
+    {
+      "name": "Dun and Bradstreet Inc.",
+      "domains": [
+        "dnb.com"
+      ]
+    },
+    {
+      "name": "e.Republic, LLC",
+      "domains": [
+        "erepublic.com",
+        "govtech.com",
+        "governing.com",
+        "marketing.governmentnavigator.com",
+        "insider.govtech.com"
+      ]
+    },
+    {
+      "name": "EAB Global, Inc.",
+      "domains": [
+        "eab.com"
+      ]
+    },
+    {
+      "name": "eContext.ai LLC",
+      "domains": [
+        "complementics.com"
+      ]
+    },
+    {
+      "name": "Edvisors Network, Inc.",
+      "domains": [
+        "edvisors.com"
+      ]
+    },
+    {
+      "name": "Effyis, Inc.",
+      "domains": [
+        "socialgist.ai"
+      ]
+    },
+    {
+      "name": "El Toro.com, LLC",
+      "domains": [
+        "eltoro.com"
+      ]
+    },
+    {
+      "name": "Electronic Voice Services, Inc.",
+      "domains": [
+        "telephonelists.biz"
+      ]
+    },
+    {
+      "name": "Elevar, LLC",
+      "domains": [
+        "getelevar.com"
+      ]
+    },
+    {
+      "name": "eLocal USA, LLC",
+      "domains": [
+        "elocal.com"
+      ]
+    },
+    {
+      "name": "Endgame Labs, Inc.",
+      "domains": [
+        "endgame.io"
+      ]
+    },
+    {
+      "name": "Enformion, LLC",
+      "domains": [
+        "enformion.com",
+        "tracers.com",
+        "go.enformion.com"
+      ]
+    },
+    {
+      "name": "Enigma Technologies, Inc.",
+      "domains": [
+        "enigma.com"
+      ]
+    },
+    {
+      "name": "Enlyft Inc.",
+      "domains": [
+        "enlyft.com"
+      ]
+    },
+    {
+      "name": "Epsilon Data Management, LLC",
+      "domains": [
+        "epsilon.com"
+      ]
+    },
+    {
+      "name": "Equifax Information Services LLC",
+      "domains": [
+        "equifax.com"
+      ]
+    },
+    {
+      "name": "Equifax Workforce Solutions LLC",
+      "domains": [
+        "theworknumber.com"
+      ]
+    },
+    {
+      "name": "EquiMine Inc.",
+      "domains": [
+        "batchleads.io"
+      ]
+    },
+    {
+      "name": "EverView HoldCo, Inc",
+      "domains": [
+        "evertrue.com"
+      ]
+    },
+    {
+      "name": "Evorra Ltd",
+      "domains": [
+        "evorra.com"
+      ]
+    },
+    {
+      "name": "Exa Labs Inc.",
+      "domains": [
+        "exa.ai"
+      ]
+    },
+    {
+      "name": "Exact Match Marketing Inc",
+      "domains": [
+        "exactmatchmarketing.com",
+        "app.exactmatchmarketing.com",
+        "exactmatch.io"
+      ]
+    },
+    {
+      "name": "Exact Opco, LLC",
+      "domains": [
+        "exactcustomer.com"
+      ]
+    },
+    {
+      "name": "eXelate, Inc.",
+      "domains": [
+        "nielsen.com"
+      ]
+    },
+    {
+      "name": "ExlService.com, LLC",
+      "domains": [
+        "exlservice.com"
+      ]
+    },
+    {
+      "name": "Experian Information Solutions, Inc",
+      "domains": [
+        "experian.com"
+      ]
+    },
+    {
+      "name": "Experian Marketing Solutions, LLC",
+      "domains": [
+        "experian.com"
+      ]
+    },
+    {
+      "name": "Explorium Inc.",
+      "domains": [
+        "explorium.ai"
+      ]
+    },
+    {
+      "name": "Eyeota Pte Ltd",
+      "domains": [
+        "eyeota.com"
+      ]
+    },
+    {
+      "name": "Family Tree Now, LLC",
+      "domains": [
+        "familytreenow.com"
+      ]
+    },
+    {
+      "name": "Famous Birthdays LLC",
+      "domains": [
+        "famousbirthdays.com",
+        "pro.famousbirthdays.com"
+      ]
+    },
+    {
+      "name": "Faraday, Inc.",
+      "domains": [
+        "faraday.ai"
+      ]
+    },
+    {
+      "name": "Fetch Rewards, LLC",
+      "domains": [
+        "fetch.com"
+      ]
+    },
+    {
+      "name": "FI Navigator Corporation",
+      "domains": [
+        "fi-navigator.com"
+      ]
+    },
+    {
+      "name": "Fideo Intelligence, Inc.",
+      "domains": [
+        "fideo.ai"
+      ]
+    },
+    {
+      "name": "Fifty Technology Ltd",
+      "domains": [
+        "fifty.io"
+      ]
+    },
+    {
+      "name": "Findem, Inc.",
+      "domains": [
+        "findem.ai"
+      ]
+    },
+    {
+      "name": "FinThrive Healthcare, Inc.",
+      "domains": [
+        "finthrive.com"
+      ]
+    },
+    {
+      "name": "First Direct, Inc.",
+      "domains": [
+        "firstdirectmarketing.com",
+        "nationallistcounts.com"
+      ]
+    },
+    {
+      "name": "First Orion Corp",
+      "domains": [
+        "firstorion.com"
+      ]
+    },
+    {
+      "name": "Focus USA, Inc.",
+      "domains": [
+        "focus-usa.com"
+      ]
+    },
+    {
+      "name": "Fog Data science LLC",
+      "domains": [
+        "fogdatascience.com"
+      ]
+    },
+    {
+      "name": "Foo Monk, LLC",
+      "domains": [
+        "instantly.ai"
+      ]
+    },
+    {
+      "name": "Forager.ai, LLC",
+      "domains": [
+        "forager.ai"
+      ]
+    },
+    {
+      "name": "Four Corner Media Corp",
+      "domains": [
+        "fourcornerhome.com",
+        "jacksgutters.com",
+        "bennetandsons.com"
+      ]
+    },
+    {
+      "name": "Fourleaf LLC",
+      "domains": [
+        "fourleafdata.com"
+      ]
+    },
+    {
+      "name": "Foursquare Labs, Inc.",
+      "domains": [
+        "foursquare.com"
+      ]
+    },
+    {
+      "name": "FourthWall Media, Inc.",
+      "domains": [
+        "fourthwall.tv"
+      ]
+    },
+    {
+      "name": "Fraiser LLC",
+      "domains": [
+        "fraiser.org"
+      ]
+    },
+    {
+      "name": "Free Data Services, LLC",
+      "domains": [
+        "truepeoplesearch.com"
+      ]
+    },
+    {
+      "name": "FREEPEOPLESEARCH.COM, LLC",
+      "domains": [
+        "freepeoplesearch.com"
+      ]
+    },
+    {
+      "name": "FreeWheel Media Inc",
+      "domains": [
+        "freewheel.com"
+      ]
+    },
+    {
+      "name": "Fushia Media, LLC",
+      "domains": [
+        "fushiamedia.com"
+      ]
+    },
+    {
+      "name": "General Motors LLC",
+      "domains": [
+        "gm.com"
+      ]
+    },
+    {
+      "name": "GETEMAILS LLC",
+      "domains": [
+        "retention.com",
+        "rb2b.com"
+      ]
+    },
+    {
+      "name": "GetVector, Inc.",
+      "domains": [
+        "vector.co"
+      ]
+    },
+    {
+      "name": "Giant Partners, Inc.",
+      "domains": [
+        "giantpartners.com",
+        "listgiant.com"
+      ]
+    },
+    {
+      "name": "Gigabite Inc",
+      "domains": [
+        "boam.ai"
+      ]
+    },
+    {
+      "name": "Global Source Data Solutions Inc",
+      "domains": [
+        "gsdsi.com"
+      ]
+    },
+    {
+      "name": "Globicom Inc",
+      "domains": [
+        "recordsfinder.com",
+        "peoplepublicrecords.org"
+      ]
+    },
+    {
+      "name": "Grassroots Analytics",
+      "domains": [
+        "grassrootsanalytics.com"
+      ]
+    },
+    {
+      "name": "GrayHair Software LLC",
+      "domains": [
+        "grayhairsoftware.com"
+      ]
+    },
+    {
+      "name": "Graze Social PBC",
+      "domains": [
+        "graze.social"
+      ]
+    },
+    {
+      "name": "Great Lakes List, Inc.",
+      "domains": [
+        "greatlakeslists.com"
+      ]
+    },
+    {
+      "name": "Growing Libraries, LLC",
+      "domains": [
+        "growinglibraries.com"
+      ]
+    },
+    {
+      "name": "GrowthCode, LLC",
+      "domains": [
+        "growthcode.io"
+      ]
+    },
+    {
+      "name": "Guidestar Direct, Corp.",
+      "domains": [
+        "carneydirect.com"
+      ]
+    },
+    {
+      "name": "H1 Insights, Inc.",
+      "domains": [
+        "h1.co"
+      ]
+    },
+    {
+      "name": "Health Union, LLC",
+      "domains": [
+        "health-union.com"
+      ]
+    },
+    {
+      "name": "Healthcare Inc",
+      "domains": [
+        "healthcare.com",
+        "pivothealth.com"
+      ]
+    },
+    {
+      "name": "HealthLink Dimensions",
+      "domains": [
+        "healthlinkdimensions.com"
+      ]
+    },
+    {
+      "name": "HealthWise Data",
+      "domains": [
+        "healthwisedata.com"
+      ]
+    },
+    {
+      "name": "Heartbeat.AI Inc",
+      "domains": [
+        "heartbeat.ai"
+      ]
+    },
+    {
+      "name": "Helix Campaigns LLC",
+      "domains": [
+        "helixcampaigns.com"
+      ]
+    },
+    {
+      "name": "HireTeamMate, Inc.",
+      "domains": [
+        "hireez.com"
+      ]
+    },
+    {
+      "name": "Hivestack Technologies Inc.",
+      "domains": [
+        "perion.com"
+      ]
+    },
+    {
+      "name": "Home Contractors Review, LLC",
+      "domains": [
+        "fivestarrated.com"
+      ]
+    },
+    {
+      "name": "HubSpot, Inc.",
+      "domains": [
+        "hubspot.com",
+        "clearbit.com"
+      ]
+    },
+    {
+      "name": "Huge Legal Technology Company, Inc",
+      "domains": [
+        "trustandwill.com"
+      ]
+    },
+    {
+      "name": "Hunt Club Inc",
+      "domains": [
+        "app.exploreatlas.io"
+      ]
+    },
+    {
+      "name": "Hunter Web Services, Inc",
+      "domains": [
+        "hunter.io"
+      ]
+    },
+    {
+      "name": "i360, LLC",
+      "domains": [
+        "i-360.com"
+      ]
+    },
+    {
+      "name": "ID5 Technology Ltd",
+      "domains": [
+        "id5.io"
+      ]
+    },
+    {
+      "name": "IDMAP Inc",
+      "domains": [
+        "idmap.ai"
+      ]
+    },
+    {
+      "name": "iLeads.com, LLC",
+      "domains": [
+        "ileads.com"
+      ]
+    },
+    {
+      "name": "illumin Inc.",
+      "domains": [
+        "illumin.com"
+      ]
+    },
+    {
+      "name": "Inbound Insight, LLC",
+      "domains": [
+        "inboundinsight.com"
+      ]
+    },
+    {
+      "name": "Index Exchange Inc.",
+      "domains": [
+        "indexexchange.com"
+      ]
+    },
+    {
+      "name": "Infinite Media Concepts, Inc.",
+      "domains": [
+        "mailinglists.com"
+      ]
+    },
+    {
+      "name": "Infomatics LLC",
+      "domains": [
+        "privatereports.com",
+        "mugshotlook.com",
+        "publicsearcher.com"
+      ]
+    },
+    {
+      "name": "InfoPay, Inc",
+      "domains": [
+        "infopay.com",
+        "infotracer.com",
+        "propertychecker.com",
+        "goodcar.com",
+        "statecourts.org",
+        "courtcasefinder.com",
+        "thepublicindex.org",
+        "entitycheck.com",
+        "sentinex.org",
+        "idstrong.com",
+        "courtrecords.us",
+        "staterecords.org",
+        "recordsfinder.com"
+      ]
+    },
+    {
+      "name": "Informa Group Limited",
+      "domains": [
+        "informa.com"
+      ]
+    },
+    {
+      "name": "Information Data Resources, LLC",
+      "domains": [
+        "publicinfoservices.com"
+      ]
+    },
+    {
+      "name": "INFORMATION.COM, LLC",
+      "domains": [
+        "information.com"
+      ]
+    },
+    {
+      "name": "Inmar Brand Solutions, Inc.",
+      "domains": [
+        "inmar.com"
+      ]
+    },
+    {
+      "name": "Inmar-OIQ, LLC",
+      "domains": [
+        "inmar.com"
+      ]
+    },
+    {
+      "name": "InMarket Media, LLC",
+      "domains": [
+        "inmarket.com"
+      ]
+    },
+    {
+      "name": "Innovation Brands Corp",
+      "domains": [
+        "proxima.ai"
+      ]
+    },
+    {
+      "name": "Innovative Database Solutions, Inc.",
+      "domains": [
+        "idatabasesolutions.com"
+      ]
+    },
+    {
+      "name": "Insightbridge LLC",
+      "domains": [
+        "mylife.com"
+      ]
+    },
+    {
+      "name": "Instant Checkmate LLC",
+      "domains": [
+        "instantcheckmate.com",
+        "cellphonedirectory.com",
+        "cheaterslie.com",
+        "freepeople-search.com"
+      ]
+    },
+    {
+      "name": "Institutional Shareholder Services Inc.",
+      "domains": [
+        "issgovernance.com"
+      ]
+    },
+    {
+      "name": "Intalytics, Inc.",
+      "domains": [
+        "intalytics.com"
+      ]
+    },
+    {
+      "name": "Integrated Direct Marketing, LLC",
+      "domains": [
+        "idm.us.com"
+      ]
+    },
+    {
+      "name": "Intelius, LLC",
+      "domains": [
+        "intelius.com",
+        "ussearch.com",
+        "pro.ussearch.com",
+        "arrestrecordsearch.com",
+        "criminalrecords.com",
+        "peoplefinder.com",
+        "peoplefind.com",
+        "telephonenumberlookups.com",
+        "reversephonelookup.com",
+        "brbpub.com",
+        "callercomplaints.com",
+        "courtreference.com",
+        "easybackgroundchecks.com",
+        "freebackgroundchecksusa.com",
+        "onlinesearches.com",
+        "snoopstation.com",
+        "zabasearch.com",
+        "addresses.com",
+        "publicrecords.com",
+        "publicrecords.onlinesearches.com",
+        "peoplelookup.com",
+        "publicrecords360.com"
+      ]
+    },
+    {
+      "name": "Intent IQ LLC",
+      "domains": [
+        "intentiq.com"
+      ]
+    },
+    {
+      "name": "Intentsify, LLC",
+      "domains": [
+        "intentsify.io"
+      ]
+    },
+    {
+      "name": "Interactive Data, LLC",
+      "domains": [
+        "ididata.com"
+      ]
+    },
+    {
+      "name": "Intermedia Ventures, LLC",
+      "domains": [
+        "staterecords.org",
+        "courtrecords.us",
+        "californiacourtrecords.us"
+      ]
+    },
+    {
+      "name": "iovation Inc.",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "IQVIA Digital Inc.",
+      "domains": [
+        "iqviadigital.com",
+        "iqvia.com"
+      ]
+    },
+    {
+      "name": "Irys, Inc",
+      "domains": [
+        "irys.us"
+      ]
+    },
+    {
+      "name": "iSpot.tv, Inc.",
+      "domains": [
+        "ispot.tv"
+      ]
+    },
+    {
+      "name": "iWave Information Systems",
+      "domains": [
+        "kindsight.io"
+      ]
+    },
+    {
+      "name": "IXI Corporation",
+      "domains": [
+        "equifax.com"
+      ]
+    },
+    {
+      "name": "J.D. Power",
+      "domains": [
+        "jdpower.com"
+      ]
+    },
+    {
+      "name": "J2 Global Canada Inc.",
+      "domains": [
+        "campaigner.com",
+        "smtp.com"
+      ]
+    },
+    {
+      "name": "J2 Martech Corp",
+      "domains": [
+        "fullcontact.com"
+      ]
+    },
+    {
+      "name": "JDM LIST SERVICES",
+      "domains": [
+        "jdmlistservices.com"
+      ]
+    },
+    {
+      "name": "JMR Media Consulting, Inc.",
+      "domains": [
+        "jmr-media.com"
+      ]
+    },
+    {
+      "name": "Juicebox App, Inc.",
+      "domains": [
+        "juicebox.ai"
+      ]
+    },
+    {
+      "name": "Jun Group Productions, LLC",
+      "domains": [
+        "jungroup.com"
+      ]
+    },
+    {
+      "name": "Kargo Global LLC",
+      "domains": [
+        "kargo.com"
+      ]
+    },
+    {
+      "name": "KB Synergy Inc",
+      "domains": [
+        "kbsynergy.com"
+      ]
+    },
+    {
+      "name": "Key Marketing Advantage",
+      "domains": [
+        "keymarketingadvantage.com"
+      ]
+    },
+    {
+      "name": "Keyword Connects LLC",
+      "domains": [
+        "keywordconnects.com"
+      ]
+    },
+    {
+      "name": "Kind Skiptracing, Inc",
+      "domains": [
+        "kindskiptracing.com"
+      ]
+    },
+    {
+      "name": "Kloudend, Inc.",
+      "domains": [
+        "ipapi.co"
+      ]
+    },
+    {
+      "name": "Knowledge Works, Inc.",
+      "domains": [
+        "sbinsights.paynetonline.com"
+      ]
+    },
+    {
+      "name": "Koddi, Inc",
+      "domains": [
+        "koddi.com"
+      ]
+    },
+    {
+      "name": "Komodo Health, Inc.",
+      "domains": [
+        "komodohealth.com"
+      ]
+    },
+    {
+      "name": "Kontext Data",
+      "domains": [
+        "kontextdata.com"
+      ]
+    },
+    {
+      "name": "L.S Mobile Apps Holdings LTD",
+      "domains": [
+        "lsmapps.com"
+      ]
+    },
+    {
+      "name": "Labels & Lists, Inc",
+      "domains": [
+        "l2-data.com"
+      ]
+    },
+    {
+      "name": "LEAD ENHANCE LLC",
+      "domains": [
+        "lead-enhance.com"
+      ]
+    },
+    {
+      "name": "Lead Intelligence Inc.",
+      "domains": [
+        "infutor.com"
+      ]
+    },
+    {
+      "name": "Lead Me Media LLC",
+      "domains": [
+        "leadmemedia.com"
+      ]
+    },
+    {
+      "name": "Lead411 Corporation",
+      "domains": [
+        "lead411.com",
+        "growjo.com",
+        "quickenrich.io"
+      ]
+    },
+    {
+      "name": "LeadCrunch",
+      "domains": [
+        "getrev.ai"
+      ]
+    },
+    {
+      "name": "LeadIQ, Inc",
+      "domains": [
+        "leadiq.com"
+      ]
+    },
+    {
+      "name": "LeadPost LLC",
+      "domains": [
+        "leadpost.com"
+      ]
+    },
+    {
+      "name": "Leadspace Inc",
+      "domains": [
+        "leadspace.com"
+      ]
+    },
+    {
+      "name": "LearnMore, LLC",
+      "domains": [
+        "learnmore.com"
+      ]
+    },
+    {
+      "name": "Leidos Digital Solutions, Inc.",
+      "domains": [
+        "leidosiq.com"
+      ]
+    },
+    {
+      "name": "LexisNexis Risk Solutions FL Inc.",
+      "domains": [
+        "risk.lexisnexis.com"
+      ]
+    },
+    {
+      "name": "LightBox Parent, L.P.",
+      "domains": [
+        "lightboxre.com"
+      ]
+    },
+    {
+      "name": "Lightcast, LLC",
+      "domains": [
+        "lightcast.io",
+        "rhetorik.com"
+      ]
+    },
+    {
+      "name": "LionShare Marketing, Inc",
+      "domains": [
+        "lionsharemarketing.com"
+      ]
+    },
+    {
+      "name": "ListKit LLC",
+      "domains": [
+        "listkit.io"
+      ]
+    },
+    {
+      "name": "ListsOnline.com, Inc.",
+      "domains": [
+        "everleads.com"
+      ]
+    },
+    {
+      "name": "Live Data Technologies, Inc.",
+      "domains": [
+        "livedatatechnologies.com"
+      ]
+    },
+    {
+      "name": "LiveIntent",
+      "domains": [
+        "liveintent.com"
+      ]
+    },
+    {
+      "name": "LiveRamp Holdings, Inc.",
+      "domains": [
+        "liveramp.com"
+      ]
+    },
+    {
+      "name": "LizDev,Inc",
+      "domains": [
+        "lizdev.com"
+      ]
+    },
+    {
+      "name": "Lob.com, Inc.",
+      "domains": [
+        "lob.com"
+      ]
+    },
+    {
+      "name": "Lookify.io",
+      "domains": [
+        "lookify.io"
+      ]
+    },
+    {
+      "name": "LoopMe Limited",
+      "domains": [
+        "loopme.com"
+      ]
+    },
+    {
+      "name": "Lusha Systems, Inc",
+      "domains": [
+        "lusha.com"
+      ]
+    },
+    {
+      "name": "M&R Strategic Services, Inc.",
+      "domains": [
+        "mrss.com"
+      ]
+    },
+    {
+      "name": "M1 Data & Analytics, LLC",
+      "domains": [
+        "m1-data.com"
+      ]
+    },
+    {
+      "name": "Madhive, Inc.",
+      "domains": [
+        "madhive.com"
+      ]
+    },
+    {
+      "name": "Magnite Inc",
+      "domains": [
+        "magnite.com"
+      ]
+    },
+    {
+      "name": "Malvern Media Inc.",
+      "domains": [
+        "malvernmedia.com"
+      ]
+    },
+    {
+      "name": "Marketing Architects, Inc.",
+      "domains": [
+        "marketingarchitects.com"
+      ]
+    },
+    {
+      "name": "MarketOps LLC",
+      "domains": [
+        "marketops.com"
+      ]
+    },
+    {
+      "name": "MarketShare Partners, LLC",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "Marriott International, Inc.",
+      "domains": [
+        "marriott.com"
+      ]
+    },
+    {
+      "name": "Matchbook Data, LLC",
+      "domains": [
+        "matchbookdata.com"
+      ]
+    },
+    {
+      "name": "MaxMind, Inc.",
+      "domains": [
+        "maxmind.com"
+      ]
+    },
+    {
+      "name": "Media.net Advertising FZ, LLC",
+      "domains": [
+        "media.net"
+      ]
+    },
+    {
+      "name": "MediaWallah Inc",
+      "domains": [
+        "mediawallah.com"
+      ]
+    },
+    {
+      "name": "MedPro Systems, LLC",
+      "domains": [
+        "medprosystems.com"
+      ]
+    },
+    {
+      "name": "Melissa Data Corporation",
+      "domains": [
+        "melissa.com"
+      ]
+    },
+    {
+      "name": "Meltwater News US, Inc.",
+      "domains": [
+        "meltwater.com"
+      ]
+    },
+    {
+      "name": "Merkle Inc.",
+      "domains": [
+        "merkle.com"
+      ]
+    },
+    {
+      "name": "Message Digital LLC",
+      "domains": [
+        "messagedigital.com"
+      ]
+    },
+    {
+      "name": "MH Sub I, LLC",
+      "domains": [
+        "internetbrands.com"
+      ]
+    },
+    {
+      "name": "Milestone Marketing Solutions",
+      "domains": [
+        "milestonemarketingsolutions.com"
+      ]
+    },
+    {
+      "name": "Minerva BI Inc",
+      "domains": [
+        "minerva.io"
+      ]
+    },
+    {
+      "name": "Mississippi Tornado Alley, LLC",
+      "domains": [
+        "advancedbackgroundchecks.com",
+        "cyberbackgroundchecks.com",
+        "fastbackgroundcheck.com",
+        "fastpeoplesearch.com",
+        "peoplesearchnow.com",
+        "phonebooks.com",
+        "searchpeoplefree.com",
+        "smartbackgroundchecks.com",
+        "usa-people-search.com",
+        "usphonebook.com"
+      ]
+    },
+    {
+      "name": "Mobile Technology Corporation",
+      "domains": [
+        "onspotdata.com"
+      ]
+    },
+    {
+      "name": "MobileFuse LLC",
+      "domains": [
+        "mobilefuse.com"
+      ]
+    },
+    {
+      "name": "Mobilewalla, Inc.",
+      "domains": [
+        "mobilewalla.com"
+      ]
+    },
+    {
+      "name": "ModFx Labs Pvt Ltd",
+      "domains": [
+        "modfxlabs.com"
+      ]
+    },
+    {
+      "name": "Modigie Inc",
+      "domains": [
+        "modigie.com"
+      ]
+    },
+    {
+      "name": "Monocl AB",
+      "domains": [
+        "account.monocl.com",
+        "definitivehc.com"
+      ]
+    },
+    {
+      "name": "Moody's Corporation",
+      "domains": [
+        "moodys.com"
+      ]
+    },
+    {
+      "name": "MULTIMEDIA LISTS, INC.",
+      "domains": [
+        "multimedialists.com"
+      ]
+    },
+    {
+      "name": "MV Digital Group, LLC",
+      "domains": [
+        "cinqdi.com"
+      ]
+    },
+    {
+      "name": "Nachal Inc.",
+      "domains": [
+        "getliminal.com"
+      ]
+    },
+    {
+      "name": "Narvar, Inc",
+      "domains": [
+        "corp.narvar.com"
+      ]
+    },
+    {
+      "name": "National Data Analytics, LLC",
+      "domains": [
+        "publicdatacheck.com"
+      ]
+    },
+    {
+      "name": "National Opinion Institute, LLC",
+      "domains": [
+        "nationalopinioninstitute.com"
+      ]
+    },
+    {
+      "name": "Neptune Ops LLC",
+      "domains": [
+        "neptuneops.com"
+      ]
+    },
+    {
+      "name": "NetWise Data, LLC",
+      "domains": [
+        "netwisedata.com"
+      ]
+    },
+    {
+      "name": "Networx Systems Inc.",
+      "domains": [
+        "networx.com"
+      ]
+    },
+    {
+      "name": "Neustar Information Services, Inc.",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "NEUSTAR IP INTELLIGENCE, INC.",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "New Mexico Data Insights",
+      "domains": [
+        "newmexicodatainsights.com"
+      ]
+    },
+    {
+      "name": "NEXT WAVE MARKETING STRATEGIES, INC",
+      "domains": [
+        "agedleadstore.com",
+        "nextwavemarketingstrategies.com"
+      ]
+    },
+    {
+      "name": "NextRoll, Inc.",
+      "domains": [
+        "nextroll.com"
+      ]
+    },
+    {
+      "name": "Nexxen Inc",
+      "domains": [
+        "nexxen.com"
+      ]
+    },
+    {
+      "name": "NFocus Consulting, Inc.",
+      "domains": [
+        "n-focus.com"
+      ]
+    },
+    {
+      "name": "Nordic Data Resources AS",
+      "domains": [
+        "nordicdataresources.com"
+      ]
+    },
+    {
+      "name": "NumLookup LLC.",
+      "domains": [
+        "numlookup.com"
+      ]
+    },
+    {
+      "name": "Nuwber Inc",
+      "domains": [
+        "nuwber.com"
+      ]
+    },
+    {
+      "name": "Ocean Global Inc",
+      "domains": [
+        "ocean.io"
+      ]
+    },
+    {
+      "name": "Ogury Ltd",
+      "domains": [
+        "ogury.com"
+      ]
+    },
+    {
+      "name": "ONAUDIENCE LTD",
+      "domains": [
+        "onaudience.com"
+      ]
+    },
+    {
+      "name": "Onfocus SAS",
+      "domains": [
+        "adagio.io"
+      ]
+    },
+    {
+      "name": "Online Advertising Network sp. z o.o.",
+      "domains": [
+        "oan.pl",
+        "ai.oan.pl"
+      ]
+    },
+    {
+      "name": "Online Media Group Inc.",
+      "domains": [
+        "omginc.xyz",
+        "mixrank.com"
+      ]
+    },
+    {
+      "name": "Opensend Inc",
+      "domains": [
+        "opensend.com"
+      ]
+    },
+    {
+      "name": "OpenX Technologies, Inc.",
+      "domains": [
+        "openx.com"
+      ]
+    },
+    {
+      "name": "Optable Technologies US Inc.",
+      "domains": [
+        "optable.co"
+      ]
+    },
+    {
+      "name": "Orgio, Inc.",
+      "domains": [
+        "theorg.com"
+      ]
+    },
+    {
+      "name": "Outlogic, LLC",
+      "domains": [
+        "outlogic.io"
+      ]
+    },
+    {
+      "name": "Outward Media Inc.",
+      "domains": [
+        "outwardmedia.com"
+      ]
+    },
+    {
+      "name": "OWMN, LTD.",
+      "domains": [
+        "thebridgecorp.com"
+      ]
+    },
+    {
+      "name": "Ownco, LLC",
+      "domains": [
+        "monitorbase.com"
+      ]
+    },
+    {
+      "name": "Pacific East Research Inc",
+      "domains": [
+        "pacificeast.com"
+      ]
+    },
+    {
+      "name": "PaeDae, Inc.",
+      "domains": [
+        "infillion.com"
+      ]
+    },
+    {
+      "name": "Paramount Lists, Inc.",
+      "domains": [
+        "paramountdirectmarketing.com"
+      ]
+    },
+    {
+      "name": "Path2Response, LLC",
+      "domains": [
+        "path2response.com"
+      ]
+    },
+    {
+      "name": "Pen-Link, Ltd.",
+      "domains": [
+        "penlink.com"
+      ]
+    },
+    {
+      "name": "People Data Labs",
+      "domains": [
+        "peopledatalabs.com"
+      ]
+    },
+    {
+      "name": "Peoplefinders, LLC",
+      "domains": [
+        "peoplefinders.com",
+        "findaneighborhood.com"
+      ]
+    },
+    {
+      "name": "PeoplefindersDaaS",
+      "domains": [
+        "peoplefindersdaas.com"
+      ]
+    },
+    {
+      "name": "Peoplewhiz, Inc",
+      "domains": [
+        "peoplewhiz.com"
+      ]
+    },
+    {
+      "name": "Pipl, Inc.",
+      "domains": [
+        "pipl.com"
+      ]
+    },
+    {
+      "name": "PitchBook Data Inc",
+      "domains": [
+        "pitchbook.com"
+      ]
+    },
+    {
+      "name": "Place Exchange, Inc.",
+      "domains": [
+        "placeexchange.com"
+      ]
+    },
+    {
+      "name": "PlaceIQ, Inc.",
+      "domains": [
+        "precisely.com"
+      ]
+    },
+    {
+      "name": "Pludo Inc",
+      "domains": [
+        "cashmereai.com"
+      ]
+    },
+    {
+      "name": "Plug Chargers LLC",
+      "domains": [
+        "plug-industries.com"
+      ]
+    },
+    {
+      "name": "Plunge, LLC",
+      "domains": [
+        "plungedigital.com"
+      ]
+    },
+    {
+      "name": "PMG Worldwide, LLC",
+      "domains": [
+        "pmg.com"
+      ]
+    },
+    {
+      "name": "Podible Inc",
+      "domains": [
+        "podscribe.com"
+      ]
+    },
+    {
+      "name": "Pop Acta Media, LLC",
+      "domains": [
+        "popacta.com"
+      ]
+    },
+    {
+      "name": "Populi LLC",
+      "domains": [
+        "definitivehc.com"
+      ]
+    },
+    {
+      "name": "PossibleNOW, Inc.",
+      "domains": [
+        "possiblenow.com"
+      ]
+    },
+    {
+      "name": "Postie, Inc",
+      "domains": [
+        "postie.com"
+      ]
+    },
+    {
+      "name": "PostPilot, Inc.",
+      "domains": [
+        "postpilot.com"
+      ]
+    },
+    {
+      "name": "Precisely Software Incorporated",
+      "domains": [
+        "precisely.com",
+        "cloud.precisely.com",
+        "cloudnative.precisely.com",
+        "data.precisely.com",
+        "developer.precisely.com",
+        "geotax.com",
+        "mapinfomarketplace.precisely.com",
+        "portal.spectrum.precisely.com"
+      ]
+    },
+    {
+      "name": "Predactiv",
+      "domains": [
+        "predactiv.com"
+      ]
+    },
+    {
+      "name": "Predictive Pop, Inc.",
+      "domains": [
+        "audigent.com"
+      ]
+    },
+    {
+      "name": "Preqin Ltd",
+      "domains": [
+        "preqin.com"
+      ]
+    },
+    {
+      "name": "Private Records LLC",
+      "domains": [
+        "privaterecords.net",
+        "peoplesearch123.com",
+        "backgroundcheckers.net",
+        "personsearchers.com"
+      ]
+    },
+    {
+      "name": "PrivCo Holding Inc",
+      "domains": [
+        "privco.com"
+      ]
+    },
+    {
+      "name": "Project Affinity, Inc.",
+      "domains": [
+        "affinity.co"
+      ]
+    },
+    {
+      "name": "Property Reach, L.P.",
+      "domains": [
+        "propertyreach.com",
+        "leadsherpa.com"
+      ]
+    },
+    {
+      "name": "PropertyRadar, Inc.",
+      "domains": [
+        "propertyradar.com"
+      ]
+    },
+    {
+      "name": "ProspectBase UK Limited",
+      "domains": [
+        "prospectbase.com"
+      ]
+    },
+    {
+      "name": "PublicRecordCom, LLC",
+      "domains": [
+        "publicrecord.com"
+      ]
+    },
+    {
+      "name": "PubMatic Inc.",
+      "domains": [
+        "pubmatic.com"
+      ]
+    },
+    {
+      "name": "PulsePoint, Inc.",
+      "domains": [
+        "pulsepoint.com"
+      ]
+    },
+    {
+      "name": "Quad Graphics, Inc.",
+      "domains": [
+        "quad.com"
+      ]
+    },
+    {
+      "name": "Quadrant Global Pte. Ltd.",
+      "domains": [
+        "quadrant.io"
+      ]
+    },
+    {
+      "name": "Qualfon",
+      "domains": [
+        "qualfon.com"
+      ]
+    },
+    {
+      "name": "Quorum Data, Inc",
+      "domains": [
+        "quorum.inc",
+        "app.quorum.live"
+      ]
+    },
+    {
+      "name": "Qurium Solutions, Inc.",
+      "domains": [
+        "supplier.io"
+      ]
+    },
+    {
+      "name": "R.L. Polk & Co.",
+      "domains": [
+        "mobilityglobal.com",
+        "spglobal.com"
+      ]
+    },
+    {
+      "name": "Rainbarrel USA LLC",
+      "domains": [
+        "knowertech.com"
+      ]
+    },
+    {
+      "name": "RampedUp",
+      "domains": [
+        "rampedup.io"
+      ]
+    },
+    {
+      "name": "Randall-Reilly, LLC",
+      "domains": [
+        "fusable.com"
+      ]
+    },
+    {
+      "name": "Ray CDP, Inc.",
+      "domains": [
+        "rayinsights.com",
+        "raycdp.com"
+      ]
+    },
+    {
+      "name": "REAL INTENT INC",
+      "domains": [
+        "realintent.co"
+      ]
+    },
+    {
+      "name": "Realeflow LLC",
+      "domains": [
+        "realeflow.com",
+        "leadflow.com"
+      ]
+    },
+    {
+      "name": "ReallyGreatRate, Inc",
+      "domains": [
+        "rgrmarketing.com"
+      ]
+    },
+    {
+      "name": "RealSource, Inc",
+      "domains": [
+        "realsourcedata.com"
+      ]
+    },
+    {
+      "name": "RecruitBot",
+      "domains": [
+        "recruitbot.com"
+      ]
+    },
+    {
+      "name": "Redi-Data Inc",
+      "domains": [
+        "redidata.com"
+      ]
+    },
+    {
+      "name": "Redmob LLC",
+      "domains": [
+        "redmob.io"
+      ]
+    },
+    {
+      "name": "Reklaim Ltd.",
+      "domains": [
+        "reklaimyours.com"
+      ]
+    },
+    {
+      "name": "RelPro, Inc.",
+      "domains": [
+        "relpro.com"
+      ]
+    },
+    {
+      "name": "RELX Inc.",
+      "domains": [
+        "lexisnexis.com"
+      ]
+    },
+    {
+      "name": "Remodeling.com, LLC",
+      "domains": [
+        "remodeling.com"
+      ]
+    },
+    {
+      "name": "Resonate",
+      "domains": [
+        "resonate.com"
+      ]
+    },
+    {
+      "name": "Response America, Inc.",
+      "domains": [
+        "responseamerica.net"
+      ]
+    },
+    {
+      "name": "RevContent, LLC",
+      "domains": [
+        "revcontent.com"
+      ]
+    },
+    {
+      "name": "Reveal Mobile, Inc.",
+      "domains": [
+        "revealmobile.com"
+      ]
+    },
+    {
+      "name": "Revelio Labs, Inc.",
+      "domains": [
+        "reveliolabs.com"
+      ]
+    },
+    {
+      "name": "Revenue Roll Inc.",
+      "domains": [
+        "meettie.com"
+      ]
+    },
+    {
+      "name": "RevenueBase, Inc",
+      "domains": [
+        "revenuebase.ai"
+      ]
+    },
+    {
+      "name": "RevOptimal, LLC",
+      "domains": [
+        "revoptimal.com"
+      ]
+    },
+    {
+      "name": "Rich Media LLC",
+      "domains": [
+        "richmediallc.com"
+      ]
+    },
+    {
+      "name": "Ripple Effect Strategies",
+      "domains": [
+        "ripple-fx.com",
+        "ripple-roi.com"
+      ]
+    },
+    {
+      "name": "RocketReach LLC",
+      "domains": [
+        "rocketreach.co"
+      ]
+    },
+    {
+      "name": "Roq.ad Inc.",
+      "domains": [
+        "roq.ad"
+      ]
+    },
+    {
+      "name": "ROR Partners, LLC",
+      "domains": [
+        "rorpartners.com"
+      ]
+    },
+    {
+      "name": "Round Sky, Inc.",
+      "domains": [
+        "roundsky.com"
+      ]
+    },
+    {
+      "name": "Rushmore Labs, LLC",
+      "domains": [
+        "rushmorelabs.com",
+        "censaianalytics.com"
+      ]
+    },
+    {
+      "name": "S&P Global Inc",
+      "domains": [
+        "spglobal.com"
+      ]
+    },
+    {
+      "name": "Sabio Inc",
+      "domains": [
+        "sabioctv.com"
+      ]
+    },
+    {
+      "name": "SalesIntel Research, Inc.",
+      "domains": [
+        "salesintel.io"
+      ]
+    },
+    {
+      "name": "Salutary Data LLC.",
+      "domains": [
+        "salutarydata.com"
+      ]
+    },
+    {
+      "name": "Samba TV, Inc.",
+      "domains": [
+        "samba.tv"
+      ]
+    },
+    {
+      "name": "SBFE, LLC",
+      "domains": [
+        "sbfe.org"
+      ]
+    },
+    {
+      "name": "Scalable Commerce LLC",
+      "domains": [
+        "kidslivesafe.com",
+        "quickpublicrecords.com"
+      ]
+    },
+    {
+      "name": "SciLeads Ltd",
+      "domains": [
+        "scileads.com"
+      ]
+    },
+    {
+      "name": "Seamless Contacts, Inc.",
+      "domains": [
+        "seamless.ai"
+      ]
+    },
+    {
+      "name": "SEMANTIQ INC",
+      "domains": [
+        "semantiqhealth.com"
+      ]
+    },
+    {
+      "name": "Semasio GmbH",
+      "domains": [
+        "semasio.com"
+      ]
+    },
+    {
+      "name": "Semcasting, Inc.",
+      "domains": [
+        "semcasting.com"
+      ]
+    },
+    {
+      "name": "Share Local Media, Inc.",
+      "domains": [
+        "sharelocalmedia.com"
+      ]
+    },
+    {
+      "name": "Sharethrough",
+      "domains": [
+        "sharethrough.com"
+      ]
+    },
+    {
+      "name": "SheerID, Inc.",
+      "domains": [
+        "sheerid.com"
+      ]
+    },
+    {
+      "name": "Similarweb Ltd.",
+      "domains": [
+        "similarweb.com"
+      ]
+    },
+    {
+      "name": "Simio Cloud, LLC",
+      "domains": [
+        "simiocloud.com"
+      ]
+    },
+    {
+      "name": "Site Impact LLC",
+      "domains": [
+        "siteimpact.com"
+      ]
+    },
+    {
+      "name": "Skydeo Inc.",
+      "domains": [
+        "skydeo.com"
+      ]
+    },
+    {
+      "name": "Slashdot Media, LLC",
+      "domains": [
+        "slashdotmedia.com",
+        "sourceforge.net",
+        "slashdot.org",
+        "voipreview.org",
+        "linuxjournal.com",
+        "myrateplan.com",
+        "wirefly.com"
+      ]
+    },
+    {
+      "name": "SMARTe Inc",
+      "domains": [
+        "smarte.pro"
+      ]
+    },
+    {
+      "name": "Snovio Inc",
+      "domains": [
+        "snov.io"
+      ]
+    },
+    {
+      "name": "Social Catfish, LLC",
+      "domains": [
+        "socialcatfish.com"
+      ]
+    },
+    {
+      "name": "Sojern, Inc",
+      "domains": [
+        "sojern.com"
+      ]
+    },
+    {
+      "name": "Solar Connect, LLC",
+      "domains": [
+        "bluefireleads.com",
+        "homeupgradepros.us",
+        "americanroofers.org",
+        "homeupgradepros.net",
+        "homeupgradeprofessionals.us",
+        "xpertroofers.com",
+        "homeupgradepros.org",
+        "homeupgradepros.io",
+        "homeupgradeprofessionals.net",
+        "kwikac.com",
+        "homeupgradeprofessionals.com",
+        "kwiksiding.com",
+        "kwik-kitchen.com",
+        "upgradepros.services",
+        "betterhousenow.com",
+        "kwikroofs.com"
+      ]
+    },
+    {
+      "name": "Source Path Digital",
+      "domains": [
+        "sourcepathdigital.com"
+      ]
+    },
+    {
+      "name": "Sovrn, Inc.",
+      "domains": [
+        "sovrn.com"
+      ]
+    },
+    {
+      "name": "Specialists Marketing Services, Inc.",
+      "domains": [
+        "sms-inc.com"
+      ]
+    },
+    {
+      "name": "Speedeon Data LLC",
+      "domains": [
+        "speedeondata.com"
+      ]
+    },
+    {
+      "name": "Spokeo, Inc.",
+      "domains": [
+        "spokeo.com",
+        "freepeopledirectory.com",
+        "thatsthem.com",
+        "peoplewin.com",
+        "anywho.com",
+        "family.me"
+      ]
+    },
+    {
+      "name": "Sports Innovation Lab, inc.",
+      "domains": [
+        "sportsilab.com"
+      ]
+    },
+    {
+      "name": "Sprout Social, Inc.",
+      "domains": [
+        "sproutsocial.com"
+      ]
+    },
+    {
+      "name": "Spy Labs AdCo, LLC",
+      "domains": [
+        "spydialer.com"
+      ]
+    },
+    {
+      "name": "SpyCloud Inc.",
+      "domains": [
+        "spycloud.com"
+      ]
+    },
+    {
+      "name": "StackAdapt Inc.",
+      "domains": [
+        "stackadapt.com"
+      ]
+    },
+    {
+      "name": "Statara Solutions LLC",
+      "domains": [
+        "statara.com"
+      ]
+    },
+    {
+      "name": "StatSocial",
+      "domains": [
+        "statsocial.com"
+      ]
+    },
+    {
+      "name": "Steppingblocks, Inc.",
+      "domains": [
+        "steppingblocks.com"
+      ]
+    },
+    {
+      "name": "Sterling Data Company LLC",
+      "domains": [
+        "sterling.ai"
+      ]
+    },
+    {
+      "name": "Stirista, LLC",
+      "domains": [
+        "stirista.com",
+        "lbdigitaldata.com",
+        "mediasourcesolutions.com",
+        "ameribase.com",
+        "lighthouselist.com",
+        "andrewswharton.com",
+        "listconnection.net",
+        "magnetik.com"
+      ]
+    },
+    {
+      "name": "Strategic Data Intelligence, LLC",
+      "domains": [
+        "strategicdataintelligence.com"
+      ]
+    },
+    {
+      "name": "Subdirect LLC",
+      "domains": [
+        "www360mediadirect.com"
+      ]
+    },
+    {
+      "name": "Subgraph, Inc",
+      "domains": [
+        "subgraph.tech"
+      ]
+    },
+    {
+      "name": "Summit Resources, LLC",
+      "domains": [
+        "clientcommand.com"
+      ]
+    },
+    {
+      "name": "Swarm Holdings, Inc.",
+      "domains": [
+        "theswarm.com"
+      ]
+    },
+    {
+      "name": "Swoop.com Inc",
+      "domains": [
+        "swoop.com"
+      ]
+    },
+    {
+      "name": "Swordfish AI Inc",
+      "domains": [
+        "swordfish.ai"
+      ]
+    },
+    {
+      "name": "T-Mobile USA, Inc.",
+      "domains": [
+        "t-mobile.com"
+      ]
+    },
+    {
+      "name": "Taboola, Inc.",
+      "domains": [
+        "taboola.com"
+      ]
+    },
+    {
+      "name": "Tagis Inc",
+      "domains": [
+        "amplemarket.com"
+      ]
+    },
+    {
+      "name": "Tapad",
+      "domains": [
+        "experian.com"
+      ]
+    },
+    {
+      "name": "TargetSmart Communications LLC",
+      "domains": [
+        "targetsmart.com"
+      ]
+    },
+    {
+      "name": "Task Genie, Inc.",
+      "domains": [
+        "datalane.com"
+      ]
+    },
+    {
+      "name": "Tauxbe Data Inc.",
+      "domains": [
+        "tauxbe.com",
+        "natcrim.com"
+      ]
+    },
+    {
+      "name": "Teads Holding Co",
+      "domains": [
+        "outbrain.com"
+      ]
+    },
+    {
+      "name": "Teads Inc",
+      "domains": [
+        "teads.com"
+      ]
+    },
+    {
+      "name": "TechTarget, Inc",
+      "domains": [
+        "informatechtarget.com",
+        "techtarget.com"
+      ]
+    },
+    {
+      "name": "Telesign Corporation",
+      "domains": [
+        "telesign.com"
+      ]
+    },
+    {
+      "name": "The Alesco Group LLC",
+      "domains": [
+        "alescodata.com"
+      ]
+    },
+    {
+      "name": "The Data Group, LLC",
+      "domains": [
+        "thedatagroup.com"
+      ]
+    },
+    {
+      "name": "THE LINEA 1 MKT SL",
+      "domains": [
+        "tl1mkt.com"
+      ]
+    },
+    {
+      "name": "The Nielsen Company, LLC",
+      "domains": [
+        "nielsen.com"
+      ]
+    },
+    {
+      "name": "The People Searchers LLC",
+      "domains": [
+        "peoplesearcher.com",
+        "secretinfo.org"
+      ]
+    },
+    {
+      "name": "The Segerdahl LLC",
+      "domains": [
+        "sg360.com"
+      ]
+    },
+    {
+      "name": "Think Data Group Inc",
+      "domains": [
+        "thinkdatagroup.com"
+      ]
+    },
+    {
+      "name": "Traackr, Inc.",
+      "domains": [
+        "traackr.com"
+      ]
+    },
+    {
+      "name": "Trans Union LLC",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "TransUnion Digital LLC",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "TransUnion Interactive, Inc.",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "TransUnion Risk and Alternative Data Solutions, Inc.",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "Trestle Solutions, Inc.",
+      "domains": [
+        "trestleiq.com"
+      ]
+    },
+    {
+      "name": "TripleLift, Inc.",
+      "domains": [
+        "triplelift.com"
+      ]
+    },
+    {
+      "name": "True Blue Analytics LLC",
+      "domains": [
+        "trueblueanalytics.org"
+      ]
+    },
+    {
+      "name": "TrueData Solutions, Inc.",
+      "domains": [
+        "truedata.co"
+      ]
+    },
+    {
+      "name": "TRUSTID, Inc.",
+      "domains": [
+        "transunion.com"
+      ]
+    },
+    {
+      "name": "Truth Now LLC",
+      "domains": [
+        "checksecrets.com",
+        "peoplesearchusa.org",
+        "inmatesearcher.com",
+        "sealedrecords.net"
+      ]
+    },
+    {
+      "name": "Truthed, Inc",
+      "domains": [
+        "truthed.com"
+      ]
+    },
+    {
+      "name": "TruthFinder, LLC",
+      "domains": [
+        "truthfinder.com",
+        "courthousedirectory.us",
+        "getfullreport.com",
+        "unitedstatesbackgroundchecks.com",
+        "courtlocations.com",
+        "locaterecord.net",
+        "recordlocator.net",
+        "backgroundchecks.us"
+      ]
+    },
+    {
+      "name": "TSG Holdco, LLC",
+      "domains": [
+        "finthrive.com"
+      ]
+    },
+    {
+      "name": "Tunnl, LLC",
+      "domains": [
+        "tunnldata.com"
+      ]
+    },
+    {
+      "name": "Unacast, Inc.",
+      "domains": [
+        "unacast.com"
+      ]
+    },
+    {
+      "name": "Unearth Campaigns LLC",
+      "domains": [
+        "unearthcampaigns.com",
+        "atlasinfluence.com"
+      ]
+    },
+    {
+      "name": "UNMASK, LLC",
+      "domains": [
+        "unmask.com"
+      ]
+    },
+    {
+      "name": "upcell, LLC",
+      "domains": [
+        "upcell.io"
+      ]
+    },
+    {
+      "name": "Uplead LLC",
+      "domains": [
+        "uplead.com"
+      ]
+    },
+    {
+      "name": "UPS Capital Corporation",
+      "domains": [
+        "upscapital.com",
+        "insureshield.com"
+      ]
+    },
+    {
+      "name": "Urban Science Applications, Inc.",
+      "domains": [
+        "urbanscience.com"
+      ]
+    },
+    {
+      "name": "US Data Corporation",
+      "domains": [
+        "usdatacorporation.com"
+      ]
+    },
+    {
+      "name": "USADATA, Inc",
+      "domains": [
+        "usadata.com"
+      ]
+    },
+    {
+      "name": "USPeopleSearch.com, LLC",
+      "domains": [
+        "uspeoplesearch.com"
+      ]
+    },
+    {
+      "name": "Valassis Communications, Inc.",
+      "domains": [
+        "rrd.com"
+      ]
+    },
+    {
+      "name": "Veeva Systems Inc.",
+      "domains": [
+        "veeva.com"
+      ]
+    },
+    {
+      "name": "Vendelux, Inc.",
+      "domains": [
+        "vendelux.com"
+      ]
+    },
+    {
+      "name": "Venntel, Inc.",
+      "domains": [
+        "venntel.com"
+      ]
+    },
+    {
+      "name": "VentiveIQ LLC",
+      "domains": [
+        "ventiveiq.com"
+      ]
+    },
+    {
+      "name": "Veraset, LLC",
+      "domains": [
+        "veraset.com"
+      ]
+    },
+    {
+      "name": "Versar Data Solutions Inc",
+      "domains": [
+        "versium.com",
+        "datafinder.com"
+      ]
+    },
+    {
+      "name": "Vertical Int, Inc.",
+      "domains": [
+        "enrichlayer.com"
+      ]
+    },
+    {
+      "name": "Vi Technologies, Inc.",
+      "domains": [
+        "vi.co"
+      ]
+    },
+    {
+      "name": "Viant US LLC",
+      "domains": [
+        "viantinc.com"
+      ]
+    },
+    {
+      "name": "VideoAmp, Inc.",
+      "domains": [
+        "videoamp.com"
+      ]
+    },
+    {
+      "name": "Virtual Marketing LLC",
+      "domains": [
+        "fusion92.com"
+      ]
+    },
+    {
+      "name": "VisitIQ LLC",
+      "domains": [
+        "visitiq.io"
+      ]
+    },
+    {
+      "name": "Vistar Media Inc.",
+      "domains": [
+        "vistarmedia.com"
+      ]
+    },
+    {
+      "name": "Visual Visitor L.L.C.",
+      "domains": [
+        "visualvisitor.com"
+      ]
+    },
+    {
+      "name": "VIZIO Services, LLC",
+      "domains": [
+        "vizio.com",
+        "inscape.tv"
+      ]
+    },
+    {
+      "name": "Voxtur Data Services",
+      "domains": [
+        "benutech.com"
+      ]
+    },
+    {
+      "name": "VRTCAL Markets Inc.",
+      "domains": [
+        "vrtcal.com"
+      ]
+    },
+    {
+      "name": "Warmly, Inc.",
+      "domains": [
+        "warmly.ai"
+      ]
+    },
+    {
+      "name": "We Inform LLC",
+      "domains": [
+        "weinform.org",
+        "truthrecord.org"
+      ]
+    },
+    {
+      "name": "WealthFeed, Inc.",
+      "domains": [
+        "wealthfeed.com"
+      ]
+    },
+    {
+      "name": "Webbula, LLC",
+      "domains": [
+        "webbula.com"
+      ]
+    },
+    {
+      "name": "West Publishing Corp",
+      "domains": [
+        "thomsonreuters.com"
+      ]
+    },
+    {
+      "name": "Whitepages, Inc",
+      "domains": [
+        "whitepages.com"
+      ]
+    },
+    {
+      "name": "Wiland, Inc.",
+      "domains": [
+        "wiland.com"
+      ]
+    },
+    {
+      "name": "Windfall Data, Inc.",
+      "domains": [
+        "windfall.com"
+      ]
+    },
+    {
+      "name": "WINR Data Pty Ltd",
+      "domains": [
+        "winrdata.com"
+      ]
+    },
+    {
+      "name": "Wiza, Inc.",
+      "domains": [
+        "wiza.com"
+      ]
+    },
+    {
+      "name": "Wunderkind Corporation",
+      "domains": [
+        "wunderkind.co"
+      ]
+    },
+    {
+      "name": "WURL, LLC",
+      "domains": [
+        "wurl.com"
+      ]
+    },
+    {
+      "name": "xAd, Inc.",
+      "domains": [
+        "groundtruth.com"
+      ]
+    },
+    {
+      "name": "Xcelerated Data LLC",
+      "domains": [
+        "xcelerated.com"
+      ]
+    },
+    {
+      "name": "Yieldmo, Inc.",
+      "domains": [
+        "yieldmo.com"
+      ]
+    },
+    {
+      "name": "Yobi Ventures, Inc.",
+      "domains": [
+        "yobi.ai"
+      ]
+    },
+    {
+      "name": "Zenleads, Inc.",
+      "domains": [
+        "apollo.io"
+      ]
+    },
+    {
+      "name": "ZeroToOne.AI Inc.",
+      "domains": [
+        "zerotoone.ai"
+      ]
+    },
+    {
+      "name": "Zeta Global",
+      "domains": [
+        "zetaglobal.com"
+      ]
+    },
+    {
+      "name": "Ziff Davis LLC",
+      "domains": [
+        "ziffdavis.com"
+      ]
+    },
+    {
+      "name": "ZipStorm, Inc.",
+      "domains": [
+        "seekout.com"
+      ]
+    },
+    {
+      "name": "ZoomInfo Technologies, LLC",
+      "domains": [
+        "zoominfo.com"
+      ]
+    },
+    {
+      "name": "ZS Associates, Inc.",
+      "domains": [
+        "zs.com"
+      ]
+    }
+  ]
+}

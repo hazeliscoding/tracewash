@@ -27,6 +27,10 @@ VALID = {
 }
 
 
+def sample(broker_id):
+    return yaml.safe_load(yaml.safe_dump(VALID).replace("peoplesearch", broker_id))
+
+
 def write_definition(tmp_path, data, stem=None):
     path = tmp_path / f"{stem or data['id']}.yaml"
     path.write_text(yaml.safe_dump(data), encoding="utf-8")

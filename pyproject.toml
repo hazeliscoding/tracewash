@@ -48,5 +48,5 @@ extend-select = ["I", "B", "UP"]
 
 [tool.pytest]
 testpaths = ["tests"]
-pythonpath = ["tests"]
+pythonpath = ["tests", "scripts"]
 strict = true
