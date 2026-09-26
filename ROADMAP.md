@@ -29,6 +29,14 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 
 - **Claim the PyPI name in M0.** `nulltrace` was lost once, so M0 publishes 0.0.1 with the sample `status`. The release workflow runs on a `v*` tag and uses trusted publishing, and M5 reuses it.
 - **Canary guard mechanics.** A pytest plugin checks every test's captured stdout, stderr and logs for the fake profile's values. Logs are captured at DEBUG so no level slips past. The positive control runs a canary-logging test inside `pytester` and expects it to fail, so CI stays green while proving the guard works.
+- **Detection runs on HTML in Python.** A definition's search uses CSS selectors: one per result, then name, age, location and link inside a result, and one that marks the no-results page. Python runs them on page HTML with BeautifulSoup. M3 feeds in the HTML that Playwright renders, so tests never need a browser.
+- **A script cleans the fixtures.** The owner saves their own listing page, and `scripts/make_fixture.py` turns it into a fixture:
+  - It keeps tags and classes and drops scripts, styles, links, IDs and every other attribute.
+  - It swaps the owner's values, read from a local file that git ignores, for the fake profile's, and replaces all other text with filler.
+  - It refuses to write the fixture if a real value, a phone outside 555-01xx or an email outside example.com survives.
+
+  No-results pages come from searching the fake name. If the owner isn't listed on a broker, its listing page comes from a common-name search and is cleaned the same way.
+- **DROP flags match at load time.** A trimmed copy of the California registry (names and domains) is committed with its import script. Definitions match it by domain when they load, so a new broker gets its flag without a re-import. The 2026 registry has 11 of the 12 seed brokers. Radaris isn't registered.
 
 ## M0: Placeholder (as soon as possible)
 
@@ -44,16 +52,17 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 ## M1: Broker registry
 
 - [ ] A definition schema in Pydantic that covers:
-  - identity and domains;
-  - search: the URL pattern, how to spot a listing, and how to tell there are no results;
+  - identity, operator and domains;
+  - search: the URL pattern, a selector for each result with selectors for its name, age, location and link, and a selector that marks the no-results page;
   - opt-out: `form`, `email` or `manual`, plus the fields it needs and any email or phone confirmation;
   - recheck interval and rate limits.
 - [ ] `tracewash brokers list` and `tracewash brokers check`, which validates every definition.
-- [ ] Seed 10 to 15 brokers by hand. Each one comes with a saved listing page and a saved no-results page, with every personal detail replaced by fake data. Start with Spokeo, Whitepages, BeenVerified, TruePeopleSearch, FastPeopleSearch, Radaris, PeopleFinders, Intelius, MyLife, Nuwber, ThatsThem and USPhoneBook.
-- [ ] DROP flags: import the California data broker registry and match it to definitions by domain. The import script and its matched output are committed.
+- [ ] `scripts/make_fixture.py` turns a saved page into a fixture. As a positive control, its tests plant a second fake profile as the "real" one and prove none of it survives.
+- [ ] Seed 10 to 15 brokers by hand. Each one comes with a saved listing page and a saved no-results page, with every personal detail replaced by fake data. Tests run each definition's selectors against its fixtures. Start with Spokeo, Whitepages, BeenVerified, TruePeopleSearch, FastPeopleSearch, Radaris, PeopleFinders, Intelius, MyLife, Nuwber, ThatsThem and USPhoneBook.
+- [ ] DROP flags: import the California data broker registry into a trimmed snapshot and match definitions to it by domain. The import script and the snapshot are committed.
 - [ ] CI runs `tracewash brokers check`. As a positive control, an invalid definition must fail it.
 
-**Done when:** `tracewash brokers list` shows every seeded broker with its opt-out method and DROP flag, and CI rejects a broken definition.
+**Done when:** `tracewash brokers list` shows every seeded broker with its opt-out method and DROP flag, every definition's selectors pass on its fixtures, and CI rejects a broken definition.
 
 ## M2: Vault and tracker
 
