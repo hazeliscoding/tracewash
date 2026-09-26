@@ -259,10 +259,14 @@ def find_leftovers(html: str, rules: list[Rule] = ()) -> list[str]:
         for value in tag.attrs.values():
             strings.append(" ".join(value) if isinstance(value, list) else str(value))
     text = "\n".join(strings)
+    # A lone initial can't identify anyone, and it matches CSS classes such as
+    # m-0, so only longer values count as leftovers.
     problems = [
         f"your {field} is still in the page"
         for field in dict.fromkeys(
-            rule.field for rule in rules if re.search(rule.pattern, text)
+            rule.field
+            for rule in rules
+            if rule.length > 1 and re.search(rule.pattern, text)
         )
     ]
     if any(not _FAKE_PHONE.search(match.group()) for match in _PHONE.finditer(text)):

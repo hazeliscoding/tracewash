@@ -270,3 +270,12 @@ def test_a_kept_phrase_only_matches_whole_words(rules):
     fixture = clean("<p>Page one</p>", rules, "no-results", keep=["Age"])
 
     assert BeautifulSoup(fixture, "html.parser").p.get_text(strip=True) == "text"
+
+
+def test_a_lone_initial_is_not_a_leftover(tmp_path):
+    path = tmp_path / "fixture-values.yaml"
+    path.write_text(yaml.safe_dump({**REAL, "middle_name": "R"}), encoding="utf-8")
+
+    fixture = clean('<div class="r-0 r-flex">x</div>', load_values(path), "no-results")
+
+    assert 'class="r-0 r-flex"' in fixture
