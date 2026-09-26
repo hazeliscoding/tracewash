@@ -9,6 +9,9 @@ mylife:
   keep: [We didn]
 nuwber:
   keep: [No results found]
+thatsthem:
+  keep: [No results]
 whitepages:
+  keep: [not found]
   # Each result sits in its own numbered list, so it never repeats among siblings.
   card: li.serp-card
