@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import pytest
@@ -13,6 +14,7 @@ def run_inner_test(pytester, monkeypatch):
         pytester.makepyfile(
             f"""
             import logging
+            import os
             import sys
 
             def test_inner(canary_profile):
@@ -36,8 +38,14 @@ def run_inner_test(pytester, monkeypatch):
             "street reached log call",
         ),
         ("print(canary_profile['last_name'].upper())", "last_name reached stdout call"),
+        (
+            "os.makedirs(os.path.join(os.environ['TRACEWASH_HOME'], 'vault'));"
+            "open(os.path.join(os.environ['TRACEWASH_HOME'], 'vault', 'profile.bin'), 'w')"
+            ".write(canary_profile['city'])",
+            "city reached file vault/profile.bin",
+        ),
     ],
-    ids=["stdout", "stderr", "debug-log", "changed-case"],
+    ids=["stdout", "stderr", "debug-log", "changed-case", "file"],
 )
 def test_guard_fails_a_test_that_leaks_a_profile_value(run_inner_test, line, expected):
     result = run_inner_test(line)
@@ -56,3 +64,10 @@ def test_cli_fixture_sends_output_through_capture(cli, capsys):
     cli("--version")
 
     assert capsys.readouterr().out.startswith("tracewash ")
+
+
+def test_each_test_gets_its_own_empty_tracewash_home(tmp_path):
+    home = Path(os.environ["TRACEWASH_HOME"])
+
+    assert home.parent == tmp_path
+    assert list(home.iterdir()) == []

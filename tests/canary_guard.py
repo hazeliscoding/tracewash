@@ -37,6 +37,25 @@ def cli():
     return invoke
 
 
+@pytest.fixture(autouse=True)
+def tracewash_home(tmp_path, monkeypatch):
+    home = tmp_path / "tracewash-home"
+    home.mkdir()
+    monkeypatch.setenv("TRACEWASH_HOME", str(home))
+    return home
+
+
+def _file_leaks(home):
+    # The vault's files must hold only ciphertext and the tracker only IDs, so
+    # a profile value in any file's raw bytes is a leak.
+    for path in sorted(home.rglob("*")):
+        if path.is_file():
+            content = path.read_bytes().lower()
+            for field, value in CANARY_PROFILE.items():
+                if value.lower().encode() in content:
+                    yield f"{field} reached file {path.relative_to(home).as_posix()}"
+
+
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
     # Loggers below the capture level never reach the report, so a DEBUG line
@@ -58,6 +77,9 @@ def pytest_runtest_makereport(item, call):
         for field, value in CANARY_PROFILE.items()
         if value.casefold() in content.casefold()
     ]
+    home = item.funcargs.get("tracewash_home")
+    if report.when == "call" and home is not None:
+        leaks += _file_leaks(home)
     if leaks:
         report.outcome = "failed"
         report.longrepr = "canary guard: " + "; ".join(leaks)
