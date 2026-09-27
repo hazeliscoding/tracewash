@@ -75,11 +75,11 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 
 ## M2: Vault and tracker
 
-- [ ] `tracewash init` creates the vault and asks for the profile: names and aliases, emails, phone numbers, current and past addresses, and birth year. `tracewash profile edit` changes it. Both use prompts, never a plaintext file.
-- [ ] Evidence store in the vault: encrypted blobs under random IDs, each with its UTC time and SHA-256.
-- [ ] Tracker in SQLite with a timeline of events per broker. The states are `not checked`, `listed`, `requested`, `action required`, `removed`, `no record`, `listed again` and `failed`. The transitions are a table with tests, and an invalid transition raises an error.
-- [ ] CLI: `tracewash track <broker> <event> [--evidence FILE]` for manual steps, `tracewash timeline <broker>`, and `tracewash status` on real data.
-- [ ] The canary guard gives every test its own `TRACEWASH_HOME` and scans every file tracewash wrote there, the SQLite file and the vault included. As a positive control, a test that writes a canary value into that folder must fail.
+- [x] `tracewash init` creates the vault and asks for the profile: names and aliases, emails, phone numbers, current and past addresses, and birth year. `tracewash profile edit` changes it. Both use prompts, never a plaintext file.
+- [x] Evidence store in the vault: encrypted blobs under random IDs, each with its UTC time and SHA-256.
+- [x] Tracker in SQLite with a timeline of events per broker. The states are `not checked`, `listed`, `requested`, `action required`, `removed`, `no record`, `listed again` and `failed`. The transitions are a table with tests, and an invalid transition raises an error.
+- [x] CLI: `tracewash track <broker> <event> [--evidence FILE]` for manual steps, `tracewash timeline <broker>`, and `tracewash status` on real data.
+- [x] The canary guard gives every test its own `TRACEWASH_HOME` and scans every file tracewash wrote there, the SQLite file and the vault included. As a positive control, a test that writes a canary value into that folder must fail.
 
 **Done when:** one broker goes through a full manual cycle (listed, requested, removed with a screenshot) from the CLI, and the canary guard proves that the database, the logs and the vault's files hold no profile value in plain text.
 
