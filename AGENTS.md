@@ -45,7 +45,8 @@ The owner brings the dashboard design. Don't write dashboard UI (templates, styl
 ## Commands
 
 - `uv sync` installs the package and the dev tools.
-- `uv run tracewash status` runs the CLI from the checkout.
+- `uv run tracewash status` runs the CLI from the checkout. Data lives in the user data folder; `TRACEWASH_HOME` points it elsewhere, and every test gets its own.
+- `tracewash init` creates the vault, `tracewash profile show|edit` and `tracewash passphrase` manage it, and `tracewash track <broker> <event> [--evidence FILE]` and `tracewash timeline <broker>` work the tracker. Commands print counts, IDs and states, never profile values.
 - `uv run pytest` runs the tests. The canary guard in `tests/canary_guard.py` checks every test.
 - `uv run ruff check` and `uv run ruff format --check` run lint and the format check, as CI does.
 - `uv run tracewash brokers list` shows the brokers, and `uv run tracewash brokers check` validates every definition.
