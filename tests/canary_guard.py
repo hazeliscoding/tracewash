@@ -22,15 +22,24 @@ def canary_profile():
     return dict(FAKE_PROFILE)
 
 
+def strip_echo(output, typed):
+    # The runner echoes each typed line the way a terminal would. That echo
+    # isn't tracewash's output, so only its first copy is dropped.
+    for line in (typed or "").splitlines():
+        if line:
+            output = output.replace(f"{line}\n", "\n", 1)
+    return output
+
+
 @pytest.fixture
 def cli():
     runner = CliRunner()
 
-    def invoke(*args):
-        result = runner.invoke(app, list(args), catch_exceptions=False)
+    def invoke(*args, input=None):
+        result = runner.invoke(app, list(args), input=input, catch_exceptions=False)
         # CliRunner keeps output to itself. Writing it out puts it in pytest's
         # capture, where the guard checks it.
-        sys.stdout.write(result.stdout)
+        sys.stdout.write(strip_echo(result.stdout, input))
         sys.stderr.write(result.stderr)
         return result
 

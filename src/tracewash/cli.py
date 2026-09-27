@@ -4,12 +4,15 @@ from typing import Annotated
 
 import typer
 
-from tracewash import definitions, drop
+from tracewash import definitions, drop, paths, profile, prompts
+from tracewash.vault import HEADER, Vault, VaultError
 
 # Locals can hold profile values, so tracebacks must never print them.
 app = typer.Typer(no_args_is_help=True, pretty_exceptions_show_locals=False)
 brokers_app = typer.Typer(no_args_is_help=True, help="Broker definitions.")
 app.add_typer(brokers_app, name="brokers")
+profile_app = typer.Typer(no_args_is_help=True, help="Your profile, kept in the vault.")
+app.add_typer(profile_app, name="profile")
 
 # Canned until the tracker exists (M2). The first line keeps it from passing
 # for real results.
@@ -110,3 +113,56 @@ def check(
     typer.echo(f"{len(paths)} {noun} checked, {verdict}")
     if invalid:
         raise typer.Exit(1)
+
+
+def _fail(message: str) -> typer.Exit:
+    typer.echo(f"tracewash: {message}", err=True)
+    return typer.Exit(1)
+
+
+def _unlock() -> Vault:
+    passphrase = typer.prompt("Passphrase", hide_input=True)
+    try:
+        return Vault.unlock(paths.vault_dir(), passphrase)
+    except VaultError as error:
+        raise _fail(str(error)) from None
+
+
+@app.command()
+def init() -> None:
+    """Create the vault and fill in your profile."""
+    location = paths.vault_dir()
+    if (location / HEADER).exists():
+        raise _fail(f"a vault already exists at {location}")
+    typer.echo(
+        f"This creates your vault in {location}.\n"
+        "Choose a passphrase you will remember. If it is lost, the vault can't be recovered."
+    )
+    passphrase = prompts.new_passphrase()
+    details = prompts.ask_profile()
+    vault = Vault.create(location, passphrase)
+    profile.save(vault, details)
+    typer.echo(f"Vault created. It holds {profile.summary(details)}.")
+
+
+@profile_app.command("show")
+def profile_show() -> None:
+    """Show what the profile holds, as counts."""
+    typer.echo(f"Your profile holds {profile.summary(profile.load(_unlock()))}.")
+
+
+@profile_app.command("edit")
+def profile_edit() -> None:
+    """Change the profile. Press Enter to keep a value."""
+    vault = _unlock()
+    details = prompts.ask_profile(profile.load(vault))
+    profile.save(vault, details)
+    typer.echo(f"Profile saved. It holds {profile.summary(details)}.")
+
+
+@app.command()
+def passphrase() -> None:
+    """Change the vault's passphrase."""
+    vault = _unlock()
+    vault.change_passphrase(prompts.new_passphrase("New passphrase"))
+    typer.echo("Passphrase changed.")

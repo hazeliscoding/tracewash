@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import pytest
+from canary_guard import strip_echo
 
 
 @pytest.fixture
@@ -73,3 +74,15 @@ def test_each_test_gets_its_own_empty_tracewash_home(tmp_path):
 
     assert home.parent == tmp_path
     assert list(home.iterdir()) == []
+
+
+def test_typed_input_echo_is_not_counted_as_output():
+    output = "First name: Marisol\nSaved.\n"
+
+    assert strip_echo(output, "Marisol\n") == "First name: \nSaved.\n"
+
+
+def test_a_value_printed_again_after_its_echo_is_still_seen():
+    output = "First name: Marisol\nHello Marisol\n"
+
+    assert "Hello Marisol" in strip_echo(output, "Marisol\n")
