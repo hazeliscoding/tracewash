@@ -40,6 +40,12 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 - **Radaris is off the seed list.** A New Jersey court transferred radaris.com to Atlas Data Privacy Corp on 2026.08.27 (MID-L-000847-24, under Daniel's Law), so there are no live pages to capture. Radaris has moved to vacate, so it may return.
 - **Nuwber is off the seed list.** nuwber.com had no DNS records on 2026.09.26, so there were no pages to capture.
 - **BeenVerified is off the seed list.** In populous states its opt-out skips the search and goes straight to a request form, so there is no listing to rescan. SearchPeopleFree takes its place.
+- **Vault encryption uses `cryptography`.** Argon2id (64 MiB, 3 passes) turns the passphrase into a key. That key wraps a random 256-bit data key, and AES-256-GCM with the data key encrypts the profile and every evidence blob. Changing the passphrase re-wraps only the data key. A forgotten passphrase can't be recovered.
+- **The vault and the tracker live in the user data folder**, and `TRACEWASH_HOME` overrides it. Only creating or editing the profile, and M3's scans, need the passphrase. `timeline` and `status` never open the vault, and `track` asks for the passphrase only when evidence is attached.
+- **The profile keeps the birth year only.** Where a form wants a full date of birth (Intelius), the owner types it.
+- **Evidence IDs are random**, so an ID in the tracker reveals nothing about the evidence and can't be matched by hashing guessed search URLs. Each piece of evidence keeps its SHA-256 inside, encrypted.
+- **`track` records what was observed, not a state.** The events are `found`, `not-found`, `requested`, `blocked` and `failed`, and the transition table decides the state.
+- **Removal needs proof.** An event that would make a broker `removed` must come with evidence, such as a screenshot, which the vault stores with its time and hash.
 
 ## M0: Placeholder (as soon as possible)
 
@@ -69,13 +75,13 @@ tracewash is a local-first Python tool, a CLI plus a dashboard on localhost, tha
 
 ## M2: Vault and tracker
 
-- [ ] `tracewash init` creates the vault. The profile holds names and aliases, emails, phone numbers, current and past addresses, and birth year. Choose the encryption library and key derivation, and record the choice here.
-- [ ] Evidence store in the vault, with blobs addressed by SHA-256.
+- [ ] `tracewash init` creates the vault and asks for the profile: names and aliases, emails, phone numbers, current and past addresses, and birth year. `tracewash profile edit` changes it. Both use prompts, never a plaintext file.
+- [ ] Evidence store in the vault: encrypted blobs under random IDs, each with its UTC time and SHA-256.
 - [ ] Tracker in SQLite with a timeline of events per broker. The states are `not checked`, `listed`, `requested`, `action required`, `removed`, `no record`, `listed again` and `failed`. The transitions are a table with tests, and an invalid transition raises an error.
-- [ ] CLI: `tracewash track <broker> <event>` for manual steps, `tracewash timeline <broker>`, and `tracewash status` on real data.
-- [ ] The canary guard also scans the SQLite file's bytes.
+- [ ] CLI: `tracewash track <broker> <event> [--evidence FILE]` for manual steps, `tracewash timeline <broker>`, and `tracewash status` on real data.
+- [ ] The canary guard gives every test its own `TRACEWASH_HOME` and scans every file tracewash wrote there, the SQLite file and the vault included. As a positive control, a test that writes a canary value into that folder must fail.
 
-**Done when:** one broker goes through a full manual cycle (listed, requested, removed) from the CLI, and the canary guard proves that the database and the logs hold no profile values.
+**Done when:** one broker goes through a full manual cycle (listed, requested, removed with a screenshot) from the CLI, and the canary guard proves that the database, the logs and the vault's files hold no profile value in plain text.
 
 ## M3: Opt-out and proof loop
 
