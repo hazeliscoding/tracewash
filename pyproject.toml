@@ -21,6 +21,8 @@ classifiers = [
 ]
 dependencies = [
     "beautifulsoup4>=4.15.0",
+    "cryptography>=50.0.1",
+    "platformdirs>=4.12.0",
     "pydantic>=2.13.5",
     "pyyaml>=6.0.3",
     "typer>=0.27.2",
