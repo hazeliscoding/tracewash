@@ -9,7 +9,7 @@
 
 Sites like Spokeo and Whitepages publish your name, address, phone number and relatives. You can opt out, but a request is not a removal: forms fail silently, confirmation emails prove nothing, and listings come back months later. Sending the request is the easy part. What matters is whether the listing is gone and stays gone.
 
-> **Status:** early development. `tracewash status` prints sample output, and nothing is tracked yet. See [ROADMAP.md](https://github.com/hazeliscoding/tracewash/blob/main/ROADMAP.md).
+> **Status:** early development. tracewash keeps your details in an encrypted vault and tracks each broker by hand. Guided opt-outs and automatic rescans come next. See [ROADMAP.md](https://github.com/hazeliscoding/tracewash/blob/main/ROADMAP.md).
 
 ## What it will look like
 
