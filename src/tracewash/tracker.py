@@ -72,14 +72,18 @@ class Tracker:
         brokers = self._db.execute("SELECT DISTINCT broker FROM events ORDER BY broker")
         return {broker: self.state(broker) for (broker,) in brokers.fetchall()}
 
-    def record(self, broker: str, event: Event, evidence: str | None = None) -> Entry:
+    def check(self, broker: str, event: Event, with_evidence: bool) -> State:
         history = [entry.event for entry in self.timeline(broker)]
         state = replay([*history, event])[-1].state
-        if state is State.REMOVED and evidence is None:
+        if state is State.REMOVED and not with_evidence:
             raise ProofRequired(
                 f"marking {broker} removed needs evidence, "
                 "such as a screenshot of the search that found nothing"
             )
+        return state
+
+    def record(self, broker: str, event: Event, evidence: str | None = None) -> Entry:
+        state = self.check(broker, event, evidence is not None)
         at = datetime.now(UTC)
         with self._db:
             self._db.execute(
