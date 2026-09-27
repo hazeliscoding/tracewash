@@ -39,9 +39,11 @@ def run_inner_test(pytester, monkeypatch):
         ),
         ("print(canary_profile['last_name'].upper())", "last_name reached stdout call"),
         (
-            "os.makedirs(os.path.join(os.environ['TRACEWASH_HOME'], 'vault'));"
-            "open(os.path.join(os.environ['TRACEWASH_HOME'], 'vault', 'profile.bin'), 'w')"
-            ".write(canary_profile['city'])",
+            (
+                "os.makedirs(os.path.join(os.environ['TRACEWASH_HOME'], 'vault'));"
+                "open(os.path.join(os.environ['TRACEWASH_HOME'], 'vault', 'profile.bin'),"
+                " 'w').write(canary_profile['city'])"
+            ),
             "city reached file vault/profile.bin",
         ),
     ],
